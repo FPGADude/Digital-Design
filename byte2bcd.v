@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+// This Verilog module contains a binary-to-bcd converter
+// Authored by David J Marion
+
 module byte2bcd(
     input [7:0] byte_in,                        // 8 bits, value 0 - 255
     output [11:0] bcd_out                       // 12 bits of 3 nibbles
