@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
-// Parameterized Fibonacci sequence generator
+// This Verilog module contains a parameterized Fibonacci sequence generator
+// Authored by David J Marion
 
 module fibonacci
     #(parameter W = 16)
