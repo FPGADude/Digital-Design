@@ -1,4 +1,4 @@
-# Digital-Design by FPGADude
+# Digital Design by FPGADude
 Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using Verilog HDL and FPGAs.
 
 This repository contains mostly Verilog code.
