@@ -27,6 +27,8 @@ Ciletti, Michael D.; Mano, M. Morris (2018) "Digital Design with an Introduction
 Roth, Charles; John, Lizy Kurian; Lee, Byeong Kil (2016) "Digital Systems Design Using Verilog"
 Palnitkar, Samir (2003) "Verilog HDL: A Guide to Digital Design and Synthesis"
 Roth Jr., Charles H.; Kinney, Larrry L. (2014) "Fundamentals of Logic Design"
+Chu, Pong P. (2008) "FPGA Prototyping by Verilog Examples: Xilinx Spartan-3 Version"
+Haskell, Richard E.; Hanna, Darrin M. (2018) "Digital Design Using Digilent FPGA Boards: Verilog/Vivado Edition"
 
 *** Computer Architecture ***
 Patterson, David A.; Hennessy, John L. (2014) "Computer Organization and Design: The Hardware/Software Interface"
