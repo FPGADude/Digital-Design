@@ -1,0 +1,37 @@
+*** Below is a list of books that I have on my bookshelf for Digital Design and/or Verilog/SystemVerilog/VHDL and/or Computer Architecture***
+*** I have collected these books in search of knowledge and wisdom in Digital Design, HDLs, and FPGAs ***
+*** A couple of these books were required textbooks for college, many others were purchased by me, mostly from Ebay or Amazon ***
+
+*** Digital Design, Verilog, SystemVerilog, VHDL, FPGA books ***
+
+Thomas, Donald (2016) "Logic Design and Verification Using SystemVerilog (Revised)"
+Salemi, Ray (2009) "FPGA Simulation: A Complete Step-by-Step Guide"
+Salemi, Ray (2013) "The UVM Primer: An Introduction to the Universal Verification Methodology"
+Readler, Blaine C. (2011) "Verilog By Example: A Concise Introduction for FPGA Design"
+Readler, Blaine C. (2014) "VHDL By Example: A Concise Introduction for FPGA Design"
+Bergeron, Janick; Cerny, Eduard; Hunter, Alan; Nightingale, Andrew (2005) "Verification Methodology Manual for SystemVerilog"
+Spear, Chris (2006) "SystemVerilog for Verification: A Guide to Learning the Testbench Language Features"
+Mintz, Mike; Ekendahl, Robert (2007) "Hardware Verification with SystemVerilog: An Object-Oriented Framework"
+Monk, Simon (2017) "Programming FPGAs: Getting Started with Verilog"
+Maxfield, Clive (2004) "The Design Warrior's Guide to FPGAs: Devices, Tools and Flows"
+Lilja, David; Sapatnekar, Sachin (2005) "Designing Digital Computer Systems with Verilog"
+Zeidman, Bob (2012) "Introduction to Verilog"
+Lee, Sunggu (2006) "Advanced Digital Logic Design: Using Verilog, State Machines, and Synthesis for FPGAs"
+Coffman, Ken (2000) "Real World FPGA Design with Verilog"
+Brown, Stephen; Vranesic, Zvonko (2003) "Fundamentals of Digital Logic with Verilog Design"
+Ciletti, Michael D. (2004) "Starter's Guide to Verilog 2001"
+Ciletti, Michael D. (2017) "Advanced Digital Design with the Verilog HDL"
+Ciletti, Michael D. (2003) "Advanced Digital Design with the Verilog HDL: Xilinx Design Series"
+Arnold, Mark Gordon (1999) "Verilog Digital Computer Design: Algorithms to Hardware"
+Ciletti, Michael D.; Mano, M. Morris (2018) "Digital Design with an Introduction to the Verilog HDL, VHDL, and SystemVerilog"
+Roth, Charles; John, Lizy Kurian; Lee, Byeong Kil (2016) "Digital Systems Design Using Verilog"
+Palnitkar, Samir (2003) "Verilog HDL: A Guide to Digital Design and Synthesis"
+Roth Jr., Charles H.; Kinney, Larrry L. (2014) "Fundamentals of Logic Design"
+
+*** Computer Architecture ***
+Patterson, David A.; Hennessy, John L. (2014) "Computer Organization and Design: The Hardware/Software Interface"
+Null, Linda; Lobur, Julia (2015) "The Essentials of Computer Organization and Architecture"
+Harris, David Money; Harris, Sarah L. (2007) "Digital Design and Computer Architecture"
+Harris, David Money; Harris, Sarah L. (2016) "Digital Design and Computer Architecture: ARM Edition"
+
+
