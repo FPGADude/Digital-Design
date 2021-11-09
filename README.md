@@ -1,7 +1,7 @@
 # Digital Design by FPGADude
-Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using Verilog HDL and FPGAs.
+Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs.
 
-This repository contains mostly Verilog code.
+This repository contains mostly Verilog code as it was the first HDL that I learned. After learning Verilog, and then looking at VHDL code, I wondered why anyone would use VHDL as it takes much more code in VHDL to accomplish the same thing as in Verilog. I stuck mostly to Verilog to begin with, and am now looking into SystemVerilog, and VHDL, as I want to have knowledge of all that encompasses the realm of digital design and FPGA engineering. 
 
 The Modules with Simulations directory contains individual Verilog modules with their test benches simulated in Xilinx Vivado.
 
