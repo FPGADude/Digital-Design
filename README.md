@@ -17,4 +17,6 @@ I have created and published an introductory tutorial book for Verilog which can
 
 I am currently working on a second Verilog tutorial book that is all about digital clocks. You can see two of the clocks, a binary clock and a 7-segment display clock, in the FPGA Projects directory. Other clocks in the book will include a VGA controller clock, 16x2 LCD clock, and 128x64 OLED display clock, all driven by the BASYS 3 FPGA board.
 
+The 10 Verilog Projects Book directory contains all the Verilog code for my new Verilog tutorial book, soon to be available at amazon.com. 
+
 Thank you for visiting my repository.
