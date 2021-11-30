@@ -1,6 +1,6 @@
 *** Below is a list of books that I have on my bookshelf for Digital Design and/or Verilog/SystemVerilog/VHDL and/or Computer Architecture***
 *** I have collected these books in search of knowledge and wisdom in Digital Design, HDLs, and FPGAs ***
-*** A couple of these books were required textbooks for college, many others were purchased by me, mostly from Ebay or Amazon ***
+*** A couple of these books were required textbooks for college, most others were purchased by me, mostly from Ebay or Amazon ***
 
 *** Digital Design, Verilog, SystemVerilog, VHDL, FPGA books ***
 
