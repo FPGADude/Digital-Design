@@ -1,5 +1,5 @@
 # Digital Design by FPGADude
-Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs.
+Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs. I own 4 FPGAs: Basys 3 by Digilent with Artix-7 by Xilinx, CMOD A7 by Digilent with Artix-7 by Xilinx, DE2 by Terasic with Cyclone II by Altera, and the GO Board by nandland.com with Ice40 by Lattice. I do most of my FPGA projects and learning with the Basys 3 using Xilinx Vivado software.
 
 This repository contains mostly Verilog code as it was the first HDL that I learned. I have stuck mostly to Verilog to begin with, and am now looking into SystemVerilog, and VHDL, as I want to have knowledge of all that encompasses the realm of digital design and FPGA engineering.
 
