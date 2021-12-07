@@ -11,7 +11,7 @@ SYNOPSIS
 	in capturing 3-dimensional data and transmitting the data to a laptop PC where a software program
 	would take the 3D information and generate the image on the screen.
 
-	A prototype was assembled and tested but ultimately the design did not work. The problem lied in 
+	A prototype was assembled and tested but ultimately the design did not work. The problem lie in 
 	the UART communication between the LiDAR sensor and IMU sensor and the microcontroller. The LiDAR 
 	and IMU sensors transmitted at different baud rates and their packetized serial information was of 
 	different lengths. This presented a difficult hurdle to overcome during the short duration of the
