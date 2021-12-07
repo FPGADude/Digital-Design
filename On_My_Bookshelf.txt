@@ -3,7 +3,6 @@
 *** A couple of these books were required textbooks for college, most others were purchased by me, mostly from Ebay or Amazon ***
 
 *** Digital Design, Verilog, SystemVerilog, VHDL, FPGA books ***
-
 Thomas, Donald (2016) "Logic Design and Verification Using SystemVerilog (Revised)"
 Salemi, Ray (2009) "FPGA Simulation: A Complete Step-by-Step Guide"
 Salemi, Ray (2013) "The UVM Primer: An Introduction to the Universal Verification Methodology"
