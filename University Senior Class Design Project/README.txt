@@ -15,7 +15,7 @@ SYNOPSIS
 	the UART communication between the LiDAR sensor and IMU sensor and the microcontroller. The LiDAR 
 	and IMU sensors transmitted at different baud rates and their packetized serial information was of 
 	different lengths. This presented a difficult hurdle to overcome during the short duration of the
-	course. 
+	course, which was a total of 22 weeks.
 
 ASIC DESIGN
 	The Verilog design files in this directory were created as an alternate solution in an attempt to 
