@@ -9,7 +9,7 @@ The FPGA Projects directory contains Verilog projects implemented on the Basys 3
 
 The University Senior Class Design Project directory contains the Verilog files for the ASIC design of the project. See the README.txt file for information regarding the project.
 
-The College Coursework directory contains my final projects for two courses: Digital Design II - traffic controller and Advanced Computer Architecture - microprocessor. There are also a couple of designs that were created for homework or lab assignments. These were the early days when I was first learning Verilog and simulating modules using Icarus Verilog and GTKWave from the command line.
+The College Coursework directory contains my final projects for two courses: Digital Design II - traffic controller and Advanced Computer Architecture - microprocessor(incomplete). There are also a couple of designs that were created for homework or lab assignments. These were the early days when I was first learning Verilog and simulating modules using Icarus Verilog and GTKWave from the command line.
 
 The Learning VHDL directory is where I am putting all of my VHDL code as I learn and work with the language.
 
