@@ -18,5 +18,3 @@ I have created and published an introductory tutorial book for Verilog which can
 The 10 Verilog Projects Book directory contains all the Verilog code for my second Verilog tutorial book that is available here https://www.amazon.com/Digital-Design-Projects-using-Verilog-ebook/dp/B09MY1T9MB/ref=sr_1_1?keywords=verilog+projects&qid=1638841674&sr=8-1.
 
 My Youtube channel all about digital design, Verilog, and FPGAs https://www.youtube.com/channel/UCu51sc2xjzXuIrGEhJDO7pw
-
-Thank you for visiting my repository.
