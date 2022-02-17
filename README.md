@@ -1,5 +1,5 @@
 # Digital Design by FPGADude
-Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs. I own 6 FPGAs: Basys 3 by Digilent with Artix-7 by Xilinx, CMOD A7 by Digilent with Artix-7 by Xilinx, Cora Z7 by Digilent with Zynq-7000-10 SoC by Xilinx and dual ARM Cortex-A9 processors, Zybo Z7 by Digilent with Zynq-7020 SoC by Xilinx, DE2 by Terasic with Cyclone II by Altera, and the GO Board by nandland.com with Ice40 by Lattice. I have done most of my FPGA projects and learning with the Basys 3 using Xilinx Vivado software.
+Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs. I own 7 FPGAs: Nexys Video by Digilent with Xilinx Artix-7, Basys 3 by Digilent with Artix-7 by Xilinx, CMOD A7 by Digilent with Artix-7 by Xilinx, Cora Z7 by Digilent with Zynq-7000-10 SoC by Xilinx and dual ARM Cortex-A9 processors, Zybo Z7 by Digilent with Zynq-7020 SoC by Xilinx, DE2 by Terasic with Cyclone II by Altera, and the GO Board by nandland.com with Ice40 by Lattice. I have done most of my FPGA projects and learning with the Basys 3 using Xilinx Vivado software.
 
 This repository contains mostly Verilog code as it was the first HDL that I learned. I have stuck mostly to Verilog to begin with, and am now looking into SystemVerilog, and VHDL, as I want to have knowledge of all that encompasses the realm of digital design and FPGA engineering.
 
@@ -17,6 +17,6 @@ I have created and published an introductory tutorial book for Verilog which can
 
 The 10 Verilog Projects Book directory contains all the Verilog code for my second Verilog tutorial book that is available here https://www.amazon.com/Digital-Design-Projects-using-Verilog-ebook/dp/B09MY1T9MB/ref=sr_1_1?keywords=verilog+projects&qid=1638841674&sr=8-1.
 
-I am currently working on another Verilog tutorial book that is all about digital clocks. You can see two of the clocks, a binary clock and a 7-segment display clock, in the FPGA Projects directory. Other clocks in the book will include a VGA controller clock, 16x2 LCD clock, and 128x64 OLED display clock, all driven by the BASYS 3 FPGA board.
+My Youtube channel all about digital design, Verilog, and FPGAs --> https://www.youtube.com/channel/UCu51sc2xjzXuIrGEhJDO7pw
 
 Thank you for visiting my repository.
