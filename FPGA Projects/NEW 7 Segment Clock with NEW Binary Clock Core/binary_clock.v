@@ -1,17 +1,18 @@
 `timescale 1ns / 1ps
-/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 // Authored by David J. Marion aka FPGA Dude
-// Created on 4/9/2022
+// Created on 4/11/2022
 //
 // For use with a system input clock signal of 100MHz
 //
-// Simulation checks GOOD
-// Note: the tick_hr and tick_min signals were not tested in simulation
-//       and will be tested using buttons on FPGA
+// Description: This module contains a binary clock, complete with button
+// debouncing circuitry for incrementing hour and minute. This module
+// outputs seconds, minutes, and hours values in BCD format, as well as
+// the 1Hz signal generated to increment the seconds counter.
 //
-// UPDATE 4/11/2022:
-//      This clock is a thing of beauty, works perfectly.
-/////////////////////////////////////////////////////////////////////////
+// For incrementing hours and minutes using buttons: hours and minutes 
+// are incremented at posedge 1Hz signal while the corresponding button is held.
+////////////////////////////////////////////////////////////////////////////////
 
 module binary_clock(
     input clk_100MHz,                   // sys clock
@@ -24,11 +25,26 @@ module binary_clock(
     output [3:0] hr_1s, hr_10s          // BCD outputs for hours
     );
     
-    // regs for each time value
-    reg [5:0] seconds_ctr = 6'b0;   // 0
-    reg [5:0] minutes_ctr = 6'b0;   // 0
-    reg [3:0] hours_ctr = 4'hc;     // 12
-    
+	// signals for button debouncing
+	reg a, b, c, d, e, f;
+	wire db_hr, db_min;
+	
+	// debounce tick hour button input
+	always @(posedge clk_100MHz) begin
+		a <= tick_hr;
+		b <= a;
+		c <= b;
+	end
+	assign db_hr = c;
+	
+	// debounce tick minute button input
+	always @(posedge clk_100MHz) begin
+		d <= tick_min;
+		e <= d;
+		f <= e;
+	end
+	assign db_min = f;
+	
     // ********************************************************
     // create the 1Hz signal
     reg [31:0] ctr_1Hz = 32'h0;
@@ -45,9 +61,14 @@ module binary_clock(
             else
                 ctr_1Hz <= ctr_1Hz + 1;
      
-     // ********************************************************
-     // seconds counter reg control
-     always @(posedge tick_1Hz or posedge reset)
+    // ********************************************************
+    // regs for each time value
+    reg [5:0] seconds_ctr = 6'b0;   // 0
+    reg [5:0] minutes_ctr = 6'b0;   // 0
+    reg [3:0] hours_ctr = 4'hc;     // 12
+	
+	// seconds counter reg control
+    always @(posedge tick_1Hz or posedge reset)
         if(reset)
             seconds_ctr <= 6'b0;
         else
@@ -56,12 +77,12 @@ module binary_clock(
             else
                 seconds_ctr <= seconds_ctr + 1;
             
-     // minutes counter reg control       
-     always @(posedge tick_1Hz or posedge reset)
+    // minutes counter reg control       
+    always @(posedge tick_1Hz or posedge reset)
         if(reset)
             minutes_ctr <= 6'b0;
         else 
-            if(tick_min | (seconds_ctr == 59))
+            if(db_min | (seconds_ctr == 59))
                 if(minutes_ctr == 59)
                     minutes_ctr <= 6'b0;
                 else
@@ -72,14 +93,14 @@ module binary_clock(
         if(reset)
             hours_ctr <= 4'hc;  // 12
         else 
-            if(tick_hr | (minutes_ctr == 59 && seconds_ctr == 59))
+            if(db_hr | (minutes_ctr == 59 && seconds_ctr == 59))
                 if(hours_ctr == 12)
                     hours_ctr <= 4'h1;
                 else
                     hours_ctr <= hours_ctr + 1;
                     
     // ********************************************************                
-    // convert binary values to bcd values
+    // convert binary values to output bcd values
     assign sec_10s = seconds_ctr / 10;
     assign sec_1s  = seconds_ctr % 10;
     assign min_10s = minutes_ctr / 10;
