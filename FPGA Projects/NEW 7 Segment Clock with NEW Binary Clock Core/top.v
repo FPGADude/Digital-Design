@@ -16,26 +16,12 @@ module top(
     
     // Internal Connections
     wire [3:0] min_1s, min_10s, hr_1s, hr_10s;
-    wire db_min, db_hr;
-    
-    // Instantiate Modules       
-    my_debounce dbm(
-        .clk(clk_100MHz),
-        .btn_in(tick_min),
-        .btn_out(db_min)
-        );
-    
-    my_debounce dbh(
-        .clk(clk_100MHz),
-        .btn_in(tick_hr),
-        .btn_out(db_hr)
-        );
     
     binary_clock bc(
         .clk_100MHz(clk_100MHz),
         .reset(reset),
-        .tick_hr(db_hr),
-        .tick_min(db_min),
+        .tick_hr(tick_hr),
+        .tick_min(tick_min),
         .tick_1Hz(blink),
         .sec_10s(),         // not connected for this clock
         .sec_1s(),          // not connected for this clock
