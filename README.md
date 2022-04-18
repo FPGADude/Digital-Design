@@ -5,7 +5,7 @@ This repository contains mostly Verilog code as it was the first HDL that I lear
 
 The Modules with Simulations directory contains individual Verilog modules with their test benches simulated in Xilinx Vivado.
 
-The FPGA Projects directory contains Verilog projects implemented on the Basys 3 FPGA board. The Basys 3 FPGA board contains an Artix-7 FPGA from Xilinx, is made by Digilent, and can be viewed here https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/
+The FPGA Projects directory contains Verilog projects implemented on an FPGA board and includes the HDL files and constraints file for each project. 
 
 The University Senior Class Design Project directory contains the Verilog files for the ASIC design of the project. See the README.txt file for information regarding the project.
 
