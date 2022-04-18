@@ -1,5 +1,5 @@
 # Digital Design by FPGA Dude
-Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs. I own 7 FPGAs: Nexys Video by Digilent with Xilinx Artix-7, Basys 3 by Digilent with Artix-7 by Xilinx, CMOD A7 by Digilent with Artix-7 by Xilinx, Cora Z7 by Digilent with Zynq-7000-10 SoC by Xilinx and dual ARM Cortex-A9 processors, Zybo Z7 by Digilent with Zynq-7020 SoC by Xilinx, DE2 by Terasic with Cyclone II by Altera, and the GO Board by nandland.com with Ice40 by Lattice. I have done most of my FPGA projects and learning with the Basys 3 using Xilinx Vivado software.
+Hello, and welcome to my digital design repository. My name is David and I enjoy digital design using HDLs and FPGAs. I own 8 FPGAs: Nexys Video by Digilent with Xilinx Artix-7, Nexys A7 by Digilent with Xilinx Artix-7, Basys 3 by Digilent with Artix-7 by Xilinx, CMOD A7 by Digilent with Artix-7 by Xilinx, Cora Z7 by Digilent with Zynq-7000-10 SoC by Xilinx and dual ARM Cortex-A9 processors, Zybo Z7 by Digilent with Zynq-7020 SoC by Xilinx, DE2 by Terasic with Cyclone II by Altera, and the GO Board by nandland.com with Ice40 by Lattice. I have done most of my FPGA projects and learning with the Basys 3 using Xilinx Vivado software.
 
 This repository contains mostly Verilog code as it was the first HDL that I learned. 
 
