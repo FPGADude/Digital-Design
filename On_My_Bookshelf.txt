@@ -30,6 +30,7 @@ Chu, Pong P. (2008) "FPGA Prototyping by Verilog Examples: Xilinx Spartan-3 Vers
 Chu, Pong P. (2008) "FPGA Prototyping by VHDL Examples: Xilinx Spartan-3 Version"
 Haskell, Richard E.; Hanna, Darrin M. (2018) "Digital Design Using Digilent FPGA Boards: Verilog/Vivado Edition"
 LaMeres, Brock J. (2017) "Introduction to Logic Circuits & Logic Design with VHDL"
+Hugg, Steven (2018) "Designing Video Game Hardware in Verilog"
 
 *** Computer Architecture ***
 Patterson, David A.; Hennessy, John L. (2014) "Computer Organization and Design: The Hardware/Software Interface"
