@@ -24,126 +24,126 @@ module pixel_gen(
     );
   
     // *** Constant Declarations for Clock ***
-    // Hour 10s Digit section = 32 x 64
-    localparam H10_X_L = 160;
-    localparam H10_X_R = 191;
-    localparam H10_Y_T = 192;
-    localparam H10_Y_B = 256;
-    
-    // Hour 1s Digit section = 32 x 64
-    localparam H1_X_L = 192;
-    localparam H1_X_R = 223;
-    localparam H1_Y_T = 192;
-    localparam H1_Y_B = 256;
-    
-    // Colon 1 section = 32 x 64
-    localparam C1_X_L = 224;
-    localparam C1_X_R = 255;
-    localparam C1_Y_T = 192;
-    localparam C1_Y_B = 256;
-    
-    // Minute 10s Digit section = 32 x 64
-    localparam M10_X_L = 256;
-    localparam M10_X_R = 287;
-    localparam M10_Y_T = 192;
-    localparam M10_Y_B = 256;
-    
-    // Minute 1s Digit section = 32 x 64
-    localparam M1_X_L = 288;
-    localparam M1_X_R = 319;
-    localparam M1_Y_T = 192;
-    localparam M1_Y_B = 256;
-    
-    // Colon 2 section = 32 x 64
-    localparam C2_X_L = 320;
-    localparam C2_X_R = 351;
-    localparam C2_Y_T = 192;
-    localparam C2_Y_B = 256;
-    
-    // Second 10s Digit section = 32 x 64
-    localparam S10_X_L = 352;
-    localparam S10_X_R = 383;
-    localparam S10_Y_T = 192;
-    localparam S10_Y_B = 256;
-    
-    // Second 1s Digit section = 32 x 64
-    localparam S1_X_L = 384;
-    localparam S1_X_R = 415;
-    localparam S1_Y_T = 192;
-    localparam S1_Y_B = 256;
-    
-    // A or P Digit section = 32 x 64
-    localparam AP_X_L = 416;
-    localparam AP_X_R = 447;
-    localparam AP_Y_T = 192;
-    localparam AP_Y_B = 256;
-    
-    // M Digit section = 32 x 64
-    localparam APM_X_L = 448;
-    localparam APM_X_R = 479;
-    localparam APM_Y_T = 192;
-    localparam APM_Y_B = 256;
+    // Hour 10s Digit section = 32 x 64         
+    localparam H10_X_L = 160;                   
+    localparam H10_X_R = 191;                   
+    localparam H10_Y_T = 192;                   
+    localparam H10_Y_B = 256;                   
+   
+    // Hour 1s Digit section = 32 x 64          
+    localparam H1_X_L = 192;                    
+    localparam H1_X_R = 223;                    
+    localparam H1_Y_T = 192;                    
+    localparam H1_Y_B = 256;                    
+   
+    // Colon 1 section = 32 x 64                
+    localparam C1_X_L = 224;                    
+    localparam C1_X_R = 255;                    
+    localparam C1_Y_T = 192;                    
+    localparam C1_Y_B = 256;                    
+   
+    // Minute 10s Digit section = 32 x 64       
+    localparam M10_X_L = 256;                   
+    localparam M10_X_R = 287;                   
+    localparam M10_Y_T = 192;                   
+    localparam M10_Y_B = 256;                   
+   
+    // Minute 1s Digit section = 32 x 64        
+    localparam M1_X_L = 288;                    
+    localparam M1_X_R = 319;                    
+    localparam M1_Y_T = 192;                    
+    localparam M1_Y_B = 256;                    
+   
+    // Colon 2 section = 32 x 64                
+    localparam C2_X_L = 320;                    
+    localparam C2_X_R = 351;                    
+    localparam C2_Y_T = 192;                    
+    localparam C2_Y_B = 256;                    
+   
+    // Second 10s Digit section = 32 x 64       
+    localparam S10_X_L = 352;                   
+    localparam S10_X_R = 383;                   
+    localparam S10_Y_T = 192;                   
+    localparam S10_Y_B = 256;                   
+   
+    // Second 1s Digit section = 32 x 64        
+    localparam S1_X_L = 384;                    
+    localparam S1_X_R = 415;                    
+    localparam S1_Y_T = 192;                    
+    localparam S1_Y_B = 256;                    
+   
+    // A or P Digit section = 32 x 64           
+    localparam AP_X_L = 416;                    
+    localparam AP_X_R = 447;                    
+    localparam AP_Y_T = 192;                    
+    localparam AP_Y_B = 256;                    
+   
+    // M Digit section = 32 x 64                
+    localparam APM_X_L = 448;                   
+    localparam APM_X_R = 479;                   
+    localparam APM_Y_T = 192;                   
+    localparam APM_Y_B = 256;                   
     
     // *** Constant Declarations for Calendar ***
     // Month 10s Digit section = 32 x 64
     localparam Mo10_X_L = 160;
     localparam Mo10_X_R = 191;
-    localparam Mo10_Y_T = 385;
-    localparam Mo10_Y_B = 448;
+    localparam Mo10_Y_T = 257;
+    localparam Mo10_Y_B = 320;
     
     // Month 1s Digit section = 32 x 64
     localparam Mo1_X_L = 192;
     localparam Mo1_X_R = 223;
-    localparam Mo1_Y_T = 385;
-    localparam Mo1_Y_B = 448;
+    localparam Mo1_Y_T = 257;
+    localparam Mo1_Y_B = 320;
     
     // Period 1 section = 32 x 64
     localparam P1_X_L = 224;
     localparam P1_X_R = 255;
-    localparam P1_Y_T = 385;
-    localparam P1_Y_B = 448;
+    localparam P1_Y_T = 257;
+    localparam P1_Y_B = 320;
     
     // Day 10s Digit section = 32 x 64
     localparam D10_X_L = 256;
     localparam D10_X_R = 287;
-    localparam D10_Y_T = 385;
-    localparam D10_Y_B = 448;
+    localparam D10_Y_T = 257;
+    localparam D10_Y_B = 320;
     
     // Day 1s Digit section = 32 x 64
     localparam D1_X_L = 288;
     localparam D1_X_R = 319;
-    localparam D1_Y_T = 385;
-    localparam D1_Y_B = 448;
+    localparam D1_Y_T = 257;
+    localparam D1_Y_B = 320;
     
     // Period 2 section = 32 x 64
     localparam P2_X_L = 320;
     localparam P2_X_R = 351;
-    localparam P2_Y_T = 385;
-    localparam P2_Y_B = 448;
+    localparam P2_Y_T = 257;
+    localparam P2_Y_B = 320;
     
     // Century 10s Digit section = 32 x 64
     localparam Ce10_X_L = 352;
     localparam Ce10_X_R = 383;
-    localparam Ce10_Y_T = 385;
-    localparam Ce10_Y_B = 448;
+    localparam Ce10_Y_T = 257;
+    localparam Ce10_Y_B = 320;
     
     // Century 1s Digit section = 32 x 64
     localparam Ce1_X_L = 384;
     localparam Ce1_X_R = 415;
-    localparam Ce1_Y_T = 385;
-    localparam Ce1_Y_B = 448;
+    localparam Ce1_Y_T = 257;
+    localparam Ce1_Y_B = 320;
     
     // Year 10s Digit section = 32 x 64
     localparam Y10_X_L = 416;
     localparam Y10_X_R = 447;
-    localparam Y10_Y_T = 385;
-    localparam Y10_Y_B = 448;
+    localparam Y10_Y_T = 257;
+    localparam Y10_Y_B = 320;
     
     // Year 1s Digit section = 32 x 64
     localparam Y1_X_L = 448;
     localparam Y1_X_R = 479;
-    localparam Y1_Y_T = 385;
-    localparam Y1_Y_B = 448;
+    localparam Y1_Y_T = 257;
+    localparam Y1_Y_B = 320;
     
     
     
@@ -323,11 +323,7 @@ module pixel_gen(
                     (Y10_Y_T <= y) && (y <= Y10_Y_B);
     assign Y1_on =  (Y1_X_L <= x) && (x <= Y1_X_R) &&
                     (Y1_Y_T <= y) && (y <= Y1_Y_B);    
-        
-        
-    // Colors
-    wire time_rgb = 12'hF00;    // red clock
-    wire date_rgb = 12'h0FF;    // aqua date    
+           
         
         
     // Mux for ROM Addresses and RGB    
@@ -335,75 +331,76 @@ module pixel_gen(
         if(~video_on)
             rgb = 12'h0;            // blank
         else begin
+            rgb = 12'h777;          // gray background
             if(H10_on) begin
                 char_addr = char_addr_h10;
                 row_addr = row_addr_h10;
                 bit_addr = bit_addr_h10;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(H1_on) begin
                 char_addr = char_addr_h1;
                 row_addr = row_addr_h1;
                 bit_addr = bit_addr_h1;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(C1_on) begin
                 char_addr = char_addr_c1;
                 row_addr = row_addr_c1;
                 bit_addr = bit_addr_c1;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(M10_on) begin
                 char_addr = char_addr_m10;
                 row_addr = row_addr_m10;
                 bit_addr = bit_addr_m10;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(M1_on) begin
                 char_addr = char_addr_m1;
                 row_addr = row_addr_m1;
                 bit_addr = bit_addr_m1;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(C2_on) begin
                 char_addr = char_addr_c2;
                 row_addr = row_addr_c2;
                 bit_addr = bit_addr_c2;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(S10_on) begin
                 char_addr = char_addr_s10;
                 row_addr = row_addr_s10;
                 bit_addr = bit_addr_s10;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(S1_on) begin
                 char_addr = char_addr_s1;
                 row_addr = row_addr_s1;
                 bit_addr = bit_addr_s1;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end  
             else if(AP_on) begin
                 char_addr = char_addr_ap;
                 row_addr = row_addr_ap;
                 bit_addr = bit_addr_ap;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             else if(APM_on) begin
                 char_addr = char_addr_apm;
                 row_addr = row_addr_apm;
                 bit_addr = bit_addr_apm;
                 if(digit_bit)
-                    rgb = time_rgb;     // red
+                    rgb = 12'hF00;     // red
             end
             
             else if(Mo10_on) begin
@@ -411,73 +408,71 @@ module pixel_gen(
                 row_addr = row_addr_mo10;
                 bit_addr = bit_addr_mo10;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(Mo1_on) begin
                 char_addr = char_addr_mo1;
                 row_addr = row_addr_mo1;
                 bit_addr = bit_addr_mo1;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(P1_on) begin
                 char_addr = char_addr_p1;
                 row_addr = row_addr_p1;
                 bit_addr = bit_addr_p1;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(D10_on) begin
                 char_addr = char_addr_d10;
                 row_addr = row_addr_d10;
                 bit_addr = bit_addr_d10;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(D1_on) begin
                 char_addr = char_addr_d1;
                 row_addr = row_addr_d1;
                 bit_addr = bit_addr_d1;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(P2_on) begin
                 char_addr = char_addr_p2;
                 row_addr = row_addr_p2;
                 bit_addr = bit_addr_p2;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(Ce10_on) begin
                 char_addr = char_addr_ce10;
                 row_addr = row_addr_ce10;
                 bit_addr = bit_addr_ce10;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(Ce1_on) begin
                 char_addr = char_addr_ce1;
                 row_addr = row_addr_ce1;
                 bit_addr = bit_addr_ce1;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end  
             else if(Y10_on) begin
                 char_addr = char_addr_y10;
                 row_addr = row_addr_y10;
                 bit_addr = bit_addr_y10;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
+                    rgb = 12'h0FF;     // aqua
             end
             else if(Y1_on) begin
                 char_addr = char_addr_y1;
                 row_addr = row_addr_y1;
                 bit_addr = bit_addr_y1;
                 if(digit_bit)
-                    rgb = date_rgb;     // aqua
-            end
-            else
-                rgb = 12'h777;          // gray background
+                    rgb = 12'h0FF;     // aqua
+            end 
         end
     end    
     
