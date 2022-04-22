@@ -3,7 +3,8 @@
 // Authored by David J. Marion aka FPGA Dude
 // Created on 4/13/2022
 //
-// Description: 
+// Description: This module contains a calendar that is driven by hours, minutes,
+// seconds, and an am_or_pm signal from the binary clock core new_binary_clock.v.
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -11,18 +12,15 @@ module calendar(
     input clk_100MHz,           // 100MHz from Basys 3
     input tick_1Hz,             // 1Hz signal from binary clock module
     input reset,                // system reset
-    input [5:0] seconds,        // seconds counter from bin clk
-    input [5:0] minutes,        // minutes counter from bin clk
-    input [3:0] hours,          // hours counter from bin clk
-    input am_pm,                // from bin clk, 0 = am, 1 = pm
+    input end_of_day,           // from bin clk
     input inc_month,            
     input inc_day,
     input inc_year,
     input inc_century,
-    output [3:0] m_10s, m_1s,   // month BCD
-    output [3:0] d_10s, d_1s,   // day BCD
-    output [3:0] y_10s, y_1s,   // year BCD
-    output [3:0] c_10s, c_1s    // century BCD
+    output [3:0] m_10s, m_1s,   // month BCD (not used in simulation)
+    output [3:0] d_10s, d_1s,   // day BCD (not used in simulation)
+    output [3:0] y_10s, y_1s,   // year BCD (not used in simulation)
+    output [3:0] c_10s, c_1s    // century BCD (not used in simulation)
     );
     
     // button debouncing
@@ -61,16 +59,19 @@ module calendar(
     reg [3:0] month = 1;
     reg [4:0] day = 1;
     reg [6:0] year = 22;
-    reg [4:0] century = 20;
+    reg [6:0] century = 20;
     
-    wire end_of_day = ((hours == 11) && (minutes == 59) && (seconds == 59) && am_pm) ? 1 : 0;
-    wire end_of_year = ((month == 12) && (day == 31)) ? 1 : 0;
-    wire leap_year = (year % 4 == 0) ? 1 : 0;
+    wire end_of_year;
+    assign end_of_year = ((month == 12 && day == 31) & end_of_day) ? 1 : 0;
+    wire end_of_century;
+    assign end_of_century = ((year == 99) & end_of_year) ? 1 : 0;
+    wire leap_year;
+    assign leap_year = (year % 4 == 0) ? 1 : 0;
     
     // day register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            day = 1;
+            day = 5'd1;
         else
             if(w_day | end_of_day)
                 case(month)
@@ -155,7 +156,7 @@ module calendar(
     // month register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            month = 1;
+            month = 4'd1;
         else
             if(w_month)
                 if(month == 12)
@@ -184,7 +185,7 @@ module calendar(
                 month <= 10;
             else if((month == 10 && day == 31) & end_of_day)
                 month <= 11;
-            else if((month == 11 && day == 31) & end_of_day)
+            else if((month == 11 && day == 30) & end_of_day)
                 month <= 12;
             else if(end_of_year & end_of_day)
                 month <= 1;
@@ -193,9 +194,9 @@ module calendar(
     // year register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            year = 22;
+            year = 7'd22;
         else
-            if(w_year | (end_of_year & end_of_day))
+            if(w_year | end_of_year)
                 if(year == 99)
                     year <= 0;
                 else
@@ -205,9 +206,9 @@ module calendar(
     // century register control
     always @(posedge tick_1Hz or posedge reset) begin
         if(reset)
-            century = 20;
+            century = 7'd20;
         else
-            if(w_cent | ((year == 99) & end_of_year & end_of_day))
+            if(w_cent | end_of_century)
                 if(century == 99)
                     century <= 0;
                 else
@@ -223,6 +224,5 @@ module calendar(
     assign y_1s  = year % 10;
     assign c_10s = century / 10;
     assign c_1s  = century % 10;
-    
     
 endmodule
