@@ -12,8 +12,8 @@ module clock_digit_rom(
 	input wire [10:0] addr,
 	output reg [7:0] data
 	);
-
-	(* rom_style = "block" *)	// Infer BRAM
+    
+	(* rom_style = "block" *)	
 
 	reg [10:0] addr_reg;
 	
