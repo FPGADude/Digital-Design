@@ -1,0 +1,6 @@
+CONSTANT LED_port, 01
+CONSTANT Switch_port, 00
+
+start:  INPUT s0, Switch_port
+		OUTPUT s0, LED_port
+		JUMP start
