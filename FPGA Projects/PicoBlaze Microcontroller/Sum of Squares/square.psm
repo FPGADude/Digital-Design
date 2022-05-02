@@ -1,0 +1,197 @@
+; sum of two squares 
+; Reference book: "FPGA Prototyping by Verilog Examples"
+;                  		"Xilinx Spartan-3 Version"
+; Author: Pong P. Chu
+; Published by: Wiley, 2008
+;
+; The above book utilizes kcpsm3 version of PicoBlaze.
+;
+; Edited by David J Marion for clarity and use on Nexys A7 FPGA
+; using PicoBlaze kcpsm6
+; Date file created: 4/28/2022
+;
+; Note: All constant values are in hexadecimal, as this is the 
+; 		numbering system that PicoBlaze uses.
+;
+; Program Operation:
+;	- read 8 switches (operand b is 4 MSBs and operand a is 4 LSBs)
+;	- calculate a^2 + b^2
+;	- display result on 8 LEDs 
+
+;===================================================================
+; Data Constant
+constant UPPER_NIBBLE_MASK, 0F		; 00001111(used in obtaining a)
+;===================================================================
+
+;===================================================================
+; Data RAM Address Alias
+constant a_lsb, 00
+constant b_lsb, 02
+constant aa_lsb, 04
+constant aa_msb, 05
+constant bb_lsb, 06
+constant bb_msb, 07
+constant aabb_lsb, 08
+constant aabb_msb, 09
+constant aabb_out, 0A
+;===================================================================
+
+;===================================================================
+; Register Alias
+; commonly used local variables
+namereg s0, data	; reg for temp data
+namereg s1, addr	; reg for temp mem & i/o port address
+namereg s2, i		; general-purpose loop index
+; global variables
+namereg sf, sw_in
+;===================================================================
+
+;===================================================================
+; Port Alias
+; ------------- input port definitions ------------------------------
+constant sw_port, 01	; 8-bit switches
+; ------------- output port definitions -----------------------------
+constant led_port, 05	; 8-bit LEDs
+;===================================================================
+
+;===================================================================
+; MAIN PROGRAM
+;===================================================================
+;
+; Calling Hierarchy:
+;
+;
+;	- clr_data_mem
+;	loop:
+;		- read_switch
+;			- get_upper_nibble
+;			- get lower nibble
+;		- square
+;			- mult_soft
+;		- write_led
+;
+
+	call clr_data_mem
+forever:
+	call read_switch
+	call square
+	call write_led
+	jump forever
+;===================================================================	
+	
+;===================================================================
+; routine: clr_data_mem
+;	function: clear data memory
+;	temp register: data, i
+;===================================================================
+clr_data_mem:
+	load i, 40				; start loop index at 64 base 10
+	load data, 00			; clear temp register
+clr_mem_loop:
+	store data, (i)			; clear each memory address at i
+	sub i, 01				; decrement loop index i
+	jump nz, clr_mem_loop	; repeat until i = 0
+	return
+	
+;===================================================================
+; routine: read_switch
+;	function: obtain operands a and b from input
+;	input register: sw_in
+; 	temp register: data
+;===================================================================
+read_switch:
+	input sw_in, sw_port	; read switch input
+	load data, sw_in		; load temp reg with value of switches
+	call get_lower_nibble	; abstract a from switches
+	store data, a_lsb		; store a to memory
+	load data, sw_in		; load temp reg with value of switches
+	call get_upper_nibble	; abstract b from switches
+	store data, b_lsb		; store b to memory
+	
+;===================================================================
+; routine: get_lower_nibble
+;	function: get lower 4 bits of data
+;	input register: data
+; 	output register: data
+;===================================================================
+get_lower_nibble:
+	and data, UPPER_NIBBLE_MASK		; clear upper nibble to get a
+	return
+	
+;===================================================================
+; routine: get_upper_nibble
+; 	function: get upper 4 bits of data
+; 	input register: data
+; 	output register: data
+;===================================================================
+get_upper_nibble:
+	sr0 data						; right shift 4 times to get b
+	sr0 data
+	sr0 data
+	sr0 data
+	return
+	
+;===================================================================
+; routine: square
+;	function: calculate a^2 + b^2
+;	temp register: s3, s4, s5, s6, data
+;===================================================================
+square:
+; calculate a^2
+	fetch s3, a_lsb			; load a to reg from memory
+	fetch s4, a_lsb			; load a to another reg from memory
+	call mult_soft			; calculate a^2 on the two registers
+	store s6, aa_lsb		; store lower byte of a^2 in memory
+	store s5, aa_msb		; store upper byte of a^2 in memory
+; calculate b^2
+	fetch s3, b_lsb			; load b to reg from memory
+	fetch s4, b_lsb			; load b to another reg from memory
+	call mult_soft			; calculate b^2 on the two registers
+	store s6, bb_lsb		; store lower byte of b^2 in memory
+	store s5, bb_msb		; store upper byte of b^2 in memory
+; calculate a^2 + b^2
+	fetch data, aa_lsb		; get lower byte of a^2 from mem to temp reg
+	add data, s6			; add lower byte of a^2 + b^2
+	store data, aabb_lsb	; store lower byte in memory
+	fetch data, aa_msb		; get upper byte of a^2 from mem to temp reg
+	addcy data, s5			; add with carry upper byte of a^2 + b^2
+	store data, aabb_msb	; store upper byte in memory
+	load data, 00			; clear data, keep carry
+	addcy data, 00			; put carry out from previous add in temp reg
+	store data, aabb_out	; store carry-out of a^2 + b^2 in memory
+	return
+
+;===================================================================
+; routine: mult_soft
+; 	function: 8-bit unsigned multiplier using shift-and-add algorithm
+;	input register:
+;		s3: multiplicand
+;		s4: multiplier
+;	output register:
+;		s5: upper byte of product
+;		s6: lower byte of product
+;	temp register: i
+;===================================================================
+mult_soft:
+	load s5, 00				; clear s5
+	load i, 08				; initialize loop index
+mult_loop:
+	sr0 s4					; shift lsb to carry
+	jump nc, shift_prod		; lsb is 0
+	add s5, s3				; lsb is 1
+shift_prod:
+	sra s5					; shift upper byte right, carry to MSB, LSB to carry
+	sra s6					; shift lower byte right, LSB of s5 to MSB of s6
+	sub i, 01				; decrement loop index
+	jump nz, mult_loop		; repeat until i = 0
+	return
+	
+;===================================================================
+; routine: write_led
+;	function: output 8 bits of result to 8 leds
+;	temp register: data
+;===================================================================
+write_led:
+	fetch data, aabb_lsb	; get sum of squares result from mem into temp reg
+	output data, led_port	; send data in temp reg to LED output port
+	return
