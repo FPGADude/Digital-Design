@@ -3,6 +3,8 @@ My name is David and I enjoy digital design using Verilog and FPGAs. I own 8 FPG
 
 This repository contains mostly Verilog code as it was the first HDL that I learned. 
 
+The Digital Systems Information directory contains documents related to digital systems.
+
 The Modules with Simulations directory contains individual Verilog modules with their test benches simulated in Xilinx Vivado.
 
 The FPGA Projects directory contains Verilog projects implemented on an FPGA board and includes the HDL files and constraints file for each project. 
