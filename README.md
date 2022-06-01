@@ -15,6 +15,8 @@ The College Coursework directory contains my final projects for two courses: Dig
 
 The Learning VHDL directory is where I am putting all of my VHDL code as I learn and work with the language.
 
+The Other Projects directory is where I am putting all my files for projects other than FPGAs or digital design.
+
 I have created and published an introductory tutorial book for Verilog which can be viewed here https://www.amazon.com/Verilog-Introductory-Follow-Along-Tutorial-ebook/dp/B09FR1BLCJ/ref=sr_1_3?crid=3NS3Y6786JH9J&dchild=1&keywords=verilog+tutorial&qid=1635800405&sprefix=verilog+tutoria%2Caps%2C178&sr=8-3 The Verilog Introductory Tutorial Book directory contains all the Verilog code from this book.
 
 The 10 Verilog Projects Book directory contains all the Verilog code for my second Verilog tutorial book that is available here https://www.amazon.com/Digital-Design-Projects-using-Verilog-ebook/dp/B09MY1T9MB/ref=sr_1_1?keywords=verilog+projects&qid=1638841674&sr=8-1.
