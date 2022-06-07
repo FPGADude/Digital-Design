@@ -1,22 +1,30 @@
 /*
-* Arduino Binary Clock 
+* Arduino Binary Clock with Audio
 * 
 * Created By:  David J. Marion
-* Last Edited: 6.5.2022
+* Last Edited: 6.7.2022
 * 
 * Purpose: For the Star Trek Clock. The circuit includes: 1 - Arduino Nano, 
 *          1 - DF Player Mini, 1 - MicroSD Card, 1 - 8ohm Speaker, 12 - LEDs, 
 *          1 - 1k ohm Resistor, 11 - 330 ohm Resistors, and 2 - Push Buttons.
+*          
+* References:
+* https://www.instructables.com/MP3-Player-With-Arduino-Using-DF-Player-Mini/
+* https://www.arduino.cc/reference/en/language/functions/time/millis/
+* 
+* Notes: Without a delay at certain times the clock runs fast. Total of delays
+*        for this program = 6 seconds. A slightly slow clock is easier to set
+*        back to correct time than a slightly fast clock.
 */
 
-// For DF Player Mini
+// For DF Player Mini - see 1st reference for additional information
 #include "SoftwareSerial.h"
 SoftwareSerial mySerial(8, 13);             // RX/TX are pins D8 and D13
 #define Start_Byte 0x7E
 #define Version_Byte 0xFF
 #define Command_Length 0x06
 #define End_Byte 0xEF
-#define Acknowledge 0x00                    //Returns info with command 0x41 [0x01: info, 0x00: no info]
+#define Acknowledge 0x00                    
 
 // 4 bits of LEDs for the hour
 const int h0 = 9;                           // bit[0] is pin D9
@@ -32,16 +40,19 @@ const int m3 = 5;                           // bit[3] is pin D5
 const int m4 = 6;                           // bit[4] is pin D6
 const int m5 = 7;                           // bit[5] is pin D7
 
-// Variables used in the program
-const unsigned long period = 1000;          //one second
-const unsigned long led_period = 500;       //LED blink millisecond
-unsigned long startMillis;
-unsigned long led_startMillis;
-unsigned long currentMillis;
-unsigned long led_currentMillis;
+// Buttons and seconds blinker LEDs
 const int hrs_btn = A0;                     // Increment Hours counter by button is pin A0
 const int min_btn = A1;                     // Increment Minutes counter by button is pin A1
-const int ledPin = A2;                      // seconds blinker is pin A2
+const int ledPin = A2;                      // Seconds blinker is pin A2
+
+// Variables used in the program
+const unsigned long DELAY_CLK = 2750;       // Clock delay in ms, adjust to tune clock to CPU time, better slow than fast, IMO
+const unsigned long period = 1000;          // One second
+const unsigned long led_period = 500;       // LED blink millisecond
+unsigned long startMillis;                  // For time keeping
+unsigned long led_startMillis;              // For seconds blinker
+unsigned long currentMillis;                // For time keeping
+unsigned long led_currentMillis;            // For seconds blinker
 int Hrs = 12;                               // Create and initialize the Hours counter to 12
 int Min = 0;                                // Create and intialize the Minutes counter to 0
 int Sec = 0;                                // Create and initialize the Seconds counter to 0
@@ -49,7 +60,8 @@ int ledState = LOW;                         // Create and initialize LED blinker
 bool PLAYED_HOURLY = false;                 // Boolean 1 for audio control
 bool PLAYED_HALF = false;                   // Boolean 2 for audio control
 
-void setup() {                              // Set up Arduino pins for I/O operations
+// Set up Arduino pins for I/O operations
+void setup() {                              
   // For Clock
   pinMode(m0, OUTPUT);                      // LED
   pinMode(m1, OUTPUT);                      // LED
@@ -66,20 +78,20 @@ void setup() {                              // Set up Arduino pins for I/O opera
   pinMode(ledPin, OUTPUT);                  // 2 LEDs
 
   // For Audio
-  mySerial.begin (9600);
+  mySerial.begin(9600);
   delay(1000);
   setVolume(20);                            // Set speaker volume using the function (0 - 30)
 }
 
 void loop() {
   // CLOCK CREATION
-  currentMillis = millis();
+  currentMillis = millis();                         // Number of milliseconds passed since start of program
   if (currentMillis - startMillis >= period)        // Greater than or equal to 1000ms(1 second)
   {
-    Sec = Sec + 1;
+    Sec++;                                          // Increment Seconds counter by 1         
     startMillis = currentMillis;
   }
-  led_currentMillis = millis();
+  led_currentMillis = millis();                     // Number of milliseconds passed since start of program
   if (led_currentMillis - led_startMillis >= led_period)  // Greater than or equal to 500ms(1/2 second)
   {
     led_startMillis = led_currentMillis;
@@ -88,11 +100,11 @@ void loop() {
       ledState = HIGH;                              // Seconds blinker ON
       if (digitalRead(hrs_btn) == LOW)              // At Increment Hours Button Press
       {
-        Hrs = Hrs + 1;                              // Increment Hours by 1
+        Hrs++;                                      // Increment Hours by 1
       }
       if (digitalRead(min_btn) == LOW)              // At Increment Minutes Button Press
       {
-        Min = Min + 1;                              // Increment Minutes by 1
+        Min++;                                      // Increment Minutes by 1
         Sec = 0;                                    // Reset Seconds to 0
       }
     }
@@ -107,12 +119,12 @@ void loop() {
   if (Sec == 60)                                    // At 60 Seconds
   {
     Sec = 0;                                        // Reset Seconds to 0
-    Min = Min + 1;                                  // Increment Minutes by 1
+    Min++;                                          // Increment Minutes by 1
   }
   if (Min == 60)                                    // At 60 Minutes
   {
     Min = 0;                                        // Reset Minutes to 0
-    Hrs = Hrs + 1;                                  // Increment Hours by 1
+    Hrs++;                                          // Increment Hours by 1
   }
   if (Hrs == 13)                                    // At 13 Hours
   { 
@@ -130,24 +142,27 @@ void loop() {
   // Every hour on the hour play track 0001
   if(Min == 0 && Sec == 0 && !PLAYED_HOURLY){       // At 0 Minutes and 0 Seconds and Boolean 1 is false
     execute_CMD(0x03,0, 0001);                      // Play audio track 0001
-    delay(250);                                     // Hold for 1/4 second
+    delay(250);                                     // 0.25 seconds delay
     PLAYED_HOURLY = true;                           // Set Boolean 1 to true so audio does not repeat
   }
   
   // Every half-hour play track 0002
   if(Min == 30 && Sec == 0 && !PLAYED_HALF){        // At 30 Minutes and 0 Seconds and Boolean 2 is false
     execute_CMD(0x03,0,0002);                       // Play audio track 0002
-    delay(250);                                     // Hold for 1/4 second
+    delay(250);                                     // 0.25 seconds delay
     PLAYED_HALF = true;                             // Set Boolean 2 to true so audio does not repeat
   }
 
   // Slow down a fast running clock
-  if(Min == 45 && Sec == 0){                        // At an arbitrary Minute value and 0 Seconds
-    delay(5000);                                    // 5 seconds delay to slow down clock, without this delay clock runs a little fast
+  if(Min == 15 && Sec == 0){                        // At 15 Minutes and 0 Seconds
+    delay(DELAY_CLK);                               // 2.75 seconds delay to slow down clock, without this delay clock runs a little fast
+  }
+  if(Min == 45 && Sec == 0){                        // At 45 Minutes and 0 Seconds
+    delay(DELAY_CLK);                               // 2.75 seconds delay to slow down clock, without this delay clock runs a little fast
   }
 
   // HOURS LED CONTROL
-  // switch-case to set LED value based on Hours decimal value
+  // switch-case to set LED value based on Hours counter decimal value
   switch(Hrs){
     case 1 :  
       digitalWrite(h0, HIGH);
@@ -224,7 +239,7 @@ void loop() {
     }
     
   // MINUTES LED CONTROL 
-  // switch-case to set LED value based on Minutes decimal value 
+  // switch-case to set LED value based on Minutes counter decimal value 
   switch(Min){
     case 0 :
       digitalWrite(m0, LOW);
@@ -709,28 +724,25 @@ void loop() {
     }
 }
 
-// FUNCTION: To set speaker volume through DF Player Mini
-void setVolume(int volume)  
-{
+// FUNCTION: To set speaker volume of DF Player Mini
+void setVolume(int volume){
   execute_CMD(0x06, 0, volume); // set the volume (0 - 30)
-  delay(2000);
+  delay(2000);                  // delay 2 seconds
 }
 
 // FUNCTION: To send commands to DF Player Mini
-void execute_CMD(byte CMD, byte Par1, byte Par2)
-// Excecute the command and parameters
-{
+void execute_CMD(byte CMD, byte Par1, byte Par2){
 
   // Calculate the checksum (2 bytes)
   word checksum = -(Version_Byte + Command_Length + CMD + Acknowledge + Par1 + Par2);
 
   // Build the command line
-  byte Command_line[10] = { Start_Byte, Version_Byte, Command_Length, CMD, Acknowledge,
+  byte Command_line[10] = {Start_Byte, Version_Byte, Command_Length, CMD, Acknowledge,
   Par1, Par2, highByte(checksum), lowByte(checksum), End_Byte};
 
   //Send the command line to the module
-  for (byte k=0; k<10; k++)
+  for(byte k=0; k<10; k++)
   {
-    mySerial.write( Command_line[k]);
+    mySerial.write(Command_line[k]);
   }
 }
