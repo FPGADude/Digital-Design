@@ -27,18 +27,18 @@ SoftwareSerial mySerial(8, 13);             // RX/TX are pins D8 and D13
 #define Acknowledge 0x00                    
 
 // 4 bits of LEDs for the hour
-const int h0 = 9;                           // bit[0] is pin D9
-const int h1 = 10;                          // bit[1] is pin D10
-const int h2 = 11;                          // bit[2] is pin D11
-const int h3 = 12;                          // bit[3] is pin D12
+const int h0 = 12;                          // bit[0] is pin D12
+const int h1 = 11;                          // bit[1] is pin D11
+const int h2 = 10;                          // bit[2] is pin D10
+const int h3 = 9;                           // bit[3] is pin D9
 
 // 6 bits of LEDs for the minute
-const int m0 = 2;                           // bit[0] is pin D2
-const int m1 = 3;                           // bit[1] is pin D3
-const int m2 = 4;                           // bit[2] is pin D4
-const int m3 = 5;                           // bit[3] is pin D5
-const int m4 = 6;                           // bit[4] is pin D6
-const int m5 = 7;                           // bit[5] is pin D7
+const int m0 = 7;                           // bit[0] is pin D7
+const int m1 = 6;                           // bit[1] is pin D6
+const int m2 = 5;                           // bit[2] is pin D5
+const int m3 = 4;                           // bit[3] is pin D4
+const int m4 = 3;                           // bit[4] is pin D3
+const int m5 = 2;                           // bit[5] is pin D2
 
 // Buttons and seconds blinker LEDs
 const int hrs_btn = A0;                     // Increment Hours counter by button is pin A0
@@ -46,7 +46,7 @@ const int min_btn = A1;                     // Increment Minutes counter by butt
 const int ledPin = A2;                      // Seconds blinker is pin A2
 
 // Variables used in the program
-const unsigned long DELAY_CLK = 2750;       // Clock delay in ms, adjust to tune clock to CPU time, better slow than fast, IMO
+const unsigned long DELAY_CLK = 1500;       // Clock delay in ms, adjust to tune clock to CPU time, better slow than fast, IMO
 const unsigned long period = 1000;          // One second
 const unsigned long led_period = 500;       // LED blink millisecond
 unsigned long startMillis;                  // For time keeping
@@ -59,6 +59,8 @@ int Sec = 0;                                // Create and initialize the Seconds
 int ledState = LOW;                         // Create and initialize LED blinker state to OFF
 bool PLAYED_HOURLY = false;                 // Boolean 1 for audio control
 bool PLAYED_HALF = false;                   // Boolean 2 for audio control
+bool PLAYED_15 = false;                     // Boolean 3 for audio control
+bool PLAYED_45 = false;                     // Boolean 4 for audio control
 
 // Set up Arduino pins for I/O operations
 void setup() {                              
@@ -135,30 +137,42 @@ void loop() {
   if(Min == 59 && Sec == 0){                        // At 59 Minutes and 0 seconds
     PLAYED_HOURLY = false;                          // Set Boolean 1 to false to play audio track
   }
+  if(Min == 44 && Sec == 0){                        // At 44 Minutes and 0 seconds
+    PLAYED_45 = false;                              // Set Boolean 4 to false to play audio track
+  }
   if(Min == 29 && Sec == 0){                        // At 29 Minutes and 0 Seconds
     PLAYED_HALF = false;                            // Set Boolean 2 to false to play audio track
+  }
+  if(Min == 14 && Sec == 0){                        // At 14 Minutes and 0 seconds
+    PLAYED_15 = false;                              // Set Boolean 3 to false to play audio track
   }
   
   // Every hour on the hour play track 0001
   if(Min == 0 && Sec == 0 && !PLAYED_HOURLY){       // At 0 Minutes and 0 Seconds and Boolean 1 is false
-    execute_CMD(0x03,0, 0001);                      // Play audio track 0001
-    delay(250);                                     // 0.25 seconds delay
+    execute_CMD(0x03,0, 0001);                      // Play audio track 0001.mp3
+    delay(DELAY_CLK);                               // 1.5 seconds delay to slow down clock, without this delay clock runs a little fast
     PLAYED_HOURLY = true;                           // Set Boolean 1 to true so audio does not repeat
   }
   
-  // Every half-hour play track 0002
+  // Every HH:30 play track 0002
   if(Min == 30 && Sec == 0 && !PLAYED_HALF){        // At 30 Minutes and 0 Seconds and Boolean 2 is false
-    execute_CMD(0x03,0,0002);                       // Play audio track 0002
-    delay(250);                                     // 0.25 seconds delay
+    execute_CMD(0x03,0,0002);                       // Play audio track 0002.mp3
+    delay(DELAY_CLK);                               // 1.5 seconds delay to slow down clock, without this delay clock runs a little fast
     PLAYED_HALF = true;                             // Set Boolean 2 to true so audio does not repeat
   }
 
-  // Slow down a fast running clock
-  if(Min == 15 && Sec == 0){                        // At 15 Minutes and 0 Seconds
-    delay(DELAY_CLK);                               // 2.75 seconds delay to slow down clock, without this delay clock runs a little fast
+  // Every HH:15 play track 0003
+  if(Min == 15 && Sec == 0 && !PLAYED_15){          // At 15 Minutes and 0 Seconds
+    execute_CMD(0x03,0,0003);                       // Play audio track 0003.mp3
+    delay(DELAY_CLK);                               // 1.5 seconds delay to slow down clock, without this delay clock runs a little fast
+    PLAYED_15 = true;                               // Set Boolean 3 to true so audio does not repeat
   }
-  if(Min == 45 && Sec == 0){                        // At 45 Minutes and 0 Seconds
-    delay(DELAY_CLK);                               // 2.75 seconds delay to slow down clock, without this delay clock runs a little fast
+  
+  // Every HH:45 play track 0004
+  if(Min == 45 && Sec == 0 && !PLAYED_45){          // At 45 Minutes and 0 Seconds
+    execute_CMD(0x03,0,0004);                       // Play audio track 0004.mp3
+    delay(DELAY_CLK);                               // 1.5 seconds delay to slow down clock, without this delay clock runs a little fast
+    PLAYED_45 = true;                               // Set Boolean 4 to true so audio does not repeat
   }
 
   // HOURS LED CONTROL
