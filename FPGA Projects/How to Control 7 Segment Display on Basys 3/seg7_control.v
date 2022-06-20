@@ -33,9 +33,9 @@ module seg7_control(
             digit_select <= 0;
             digit_timer <= 0; 
         end
-        else                                        // 1/1000 = 1ms x 4 displays = 4ms refresh period
-            if(digit_timer == 99_999) begin       // 100MHz / 100,000 = 1000 : each display on for 1ms
-                digit_timer <= 0;
+        else                                        // 1ms x 4 displays = 4ms refresh period
+            if(digit_timer == 99_999) begin         // The period of 100MHz clock is 10ns (1/100,000,000 seconds)
+                digit_timer <= 0;                   // 10ns x 100,000 = 1ms
                 digit_select <=  digit_select + 1;
             end
             else
