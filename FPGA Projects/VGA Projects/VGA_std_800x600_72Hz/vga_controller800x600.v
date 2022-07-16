@@ -1,4 +1,6 @@
-// Trying this out with 800x600 @ 72Hz
+// Created by David J. Marion aka FPGA Dude
+// VGA Controller for 800x600 @72Hz standard
+// Requires a 50MHz pixel clock
 // For use with an FPGA with a 100MHz clock
 module vga_controller(
 	input clk_100MHz, 
