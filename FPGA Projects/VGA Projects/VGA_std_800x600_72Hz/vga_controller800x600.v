@@ -1,12 +1,17 @@
-// Trying this out with 800x600 @ 72Hz
-// The silver VGA screen worked great with these parameters
-module vga_controller
-
-	(
-		input wire clk, reset,
-		output wire hsync, vsync, video_on, p_tick,
-		output wire [10:0] x, y
-	);
+// Created by David J. Marion aka FPGA Dude
+// VGA Controller for 800x600 @72Hz standard
+// Requires a 50MHz pixel clock
+// For use with an FPGA with a 100MHz clock
+module vga_controller(
+	input clk_100MHz, 
+	input reset,
+	output hsync, 
+	output vsync, 
+	output video_on, 
+	output p_tick,
+	output [10:0] x, 
+	output [10:0] y
+);
 	
 	// VESA Signal 800 x 600 @ 72Hz timing
 	// constant declarations for VGA sync parameters
@@ -23,7 +28,7 @@ module vga_controller
 	localparam V_B_BORDER      =  23; // vertical bottom border
 	localparam V_RETRACE       =   6; // vertical retrace
 	localparam V_MAX           = V_DISPLAY + V_T_BORDER + V_B_BORDER + V_RETRACE - 1;
-    localparam START_V_RETRACE = V_DISPLAY + V_B_BORDER;
+    	localparam START_V_RETRACE = V_DISPLAY + V_B_BORDER;
 	localparam END_V_RETRACE   = V_DISPLAY + V_B_BORDER + V_RETRACE - 1;
 	
 	// mod-2 counter to generate 50 MHz pixel tick
