@@ -77,8 +77,8 @@ module i2c_master(
                        
     always @(posedge clk_200kHz or posedge reset) begin
         if(reset) begin
-            state_reg <= POWER_UP;
-			count <= 32'b0;
+            state_reg <= START;
+			count <= 12'd2000;
         end
         else begin
 			count <= count + 1;
