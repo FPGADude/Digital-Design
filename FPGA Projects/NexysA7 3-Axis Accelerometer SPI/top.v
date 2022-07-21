@@ -35,7 +35,6 @@
 //                   receipts. Which edge is detected is dependent on the mode.
 //                   - CPHA --> 0 means first edge, 1 means second edge
 //                   - CPOL --> sclk idle position, 0 for low, 1 for high
-//                   This means timing is very critical in the design.
 //////////////////////////////////////////////////////////////////////////////////
 
 
