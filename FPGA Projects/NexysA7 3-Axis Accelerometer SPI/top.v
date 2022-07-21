@@ -27,6 +27,15 @@
 //             hopefully find what works.
 //           - A good place to start is with the SPI Master module. Maybe, the
 //             timing is not quite right.
+//
+//
+//  NEW INFORMATION: I did not account for the SPI Mode, which is mode 0, meaning
+//                   CPOL = 0, and CPHA = 0. (Hopefully, this is an easy fix.)
+//                   The mode is all about the SCLK edge for data sends and
+//                   receipts. Which edge is detected is dependent on the mode.
+//                   - CPHA --> 0 means first edge, 1 means second edge
+//                   - CPOL --> sclk idle position, 0 for low, 1 for high
+//                   This means timing is very critical in the design.
 //////////////////////////////////////////////////////////////////////////////////
 
 
