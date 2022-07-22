@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 // Created by David J. Marion
-// Date: 7.21.2022
 // For Nexys A7 Accelerometer reading
+// Attempting a burst read from the 3 MSBs of each axis
 
 module spi_master(
     input iclk,                 // 4MHz
@@ -14,17 +14,22 @@ module spi_master(
     output [7:0] z_data
     );
     
+	// Account for CPOL = 0, CPHA = 0
+	reg sclk_control = 1'b0;		// control sclk output to satisfy CPOL = 0
 	
-	reg clk_counter = 1'b0;
-	reg clk_reg = 1'b1;
 	
 	// Create a 1MHz signal from a 4MHz signal
 	// 4 x 10^6 / 1 x 10^6 / 2 = 2
+	reg clk_counter = 1'b0;
+	reg clk_reg = 1'b1;	
+	
 	always @(posedge iclk) begin
 		clk_counter <= clk_counter + 1;
 		if(clk_counter == 1'b1)
 			clk_reg <= ~clk_reg;
 	end
+	
+	
 	
     reg [7:0] read_instr  = 8'h0B;
     reg [7:0] x_data_addr = 8'h08;
@@ -38,7 +43,7 @@ module spi_master(
     
     // 43 states for state machine
     localparam [5:0] POWER_UP    = 6'h00,
-                     SEND_CSL    = 6'h01,
+                     BEGIN_SPI   = 6'h01,
                      SEND_CMD7   = 6'h02,
 					 SEND_CMD6   = 6'h03,
 					 SEND_CMD5   = 6'h04,
@@ -79,7 +84,7 @@ module spi_master(
 					 REC_Z2      = 6'h27,
 					 REC_Z1      = 6'h28,
 					 REC_Z0      = 6'h29,
-                     SEND_CSH    = 6'h2A;
+                     END_SPI     = 6'h2A;
                                    
     // State Register              
     reg [5:0] state_reg = POWER_UP;
@@ -89,14 +94,16 @@ module spi_master(
         case(state_reg)
             POWER_UP    : begin
                             if(counter == 32'd19999)			// Wait for 5ms
-                                state_reg <= SEND_CSL;
+                                state_reg <= BEGIN_SPI;
 			end
-			SEND_CSL	: begin						// 20000
-							csn <= 1'b0;			// 20001
-							if(counter == 32'd20001)
+			BEGIN_SPI	: begin						// 20000
+							if(counter == 32'd20001) begin
 								state_reg <= SEND_CMD7;
+								csn <= 1'b0;		// 20002								
+							end	
 			end
             SEND_CMD7    : begin					// 20002
+							sclk_control <= 1'b1;	// 20003	satisfy CPHA = 0, first edge is posedge of SCLK
 							mosi <= read_instr[7];	// 20003
 							if(counter == 32'd20005)
 								state_reg <= SEND_CMD6;
@@ -296,21 +303,22 @@ module spi_master(
 			REC_Z0       : begin					// 20158
 							Z[0] <= miso;			// 20159
 							if(counter == 32'd20161)
-								state_reg <= SEND_CSH;
+								state_reg <= END_SPI;
             end
-            SEND_CSH    : begin						// 20162
+            END_SPI    : begin						// 20162
 							csn <= 1'b1;			// 20163
+							sclk_control <= 1'b0;	// 20163
 							if(counter == 32'd30163) begin	// wait 2.5ms
 								counter <= 32'd20000;	// reset to 20000
-								state_reg <= SEND_CSL;
+								state_reg <= BEGIN_SPI;
 							end	
             end
         endcase
     end
     
     // Data Buffer
-    always @(posedge sclk)
-        if(counter == 32'd20162)		// latch when first entering state SEND_CSH
+    always @(posedge iclk)
+        if(counter == 32'd20162)		// latch when first entering state END_SPI
             temp_data_storage <= { X, Y, Z };
             
     // Output accelerometer data
@@ -318,6 +326,7 @@ module spi_master(
     assign y_data = temp_data_storage[15:8];
     assign z_data = temp_data_storage[7:0];
 	
-	assign sclk = clk_reg;
+	// Multiplex sclk for output
+	assign sclk = (sclk_control) ? clk_reg : 0;    // satisfies SPI mode 0 
     
 endmodule
