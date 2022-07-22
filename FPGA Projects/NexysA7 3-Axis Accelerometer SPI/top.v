@@ -27,6 +27,20 @@
 //             hopefully find what works.
 //           - A good place to start is with the SPI Master module. Maybe, the
 //             timing is not quite right.
+//
+//
+//  NEW INFORMATION: I did not account for the SPI Mode, which is mode 0, meaning
+//                   CPOL = 0, and CPHA = 0. (Hopefully, this is an easy fix.)
+//                   The mode is all about the SCLK edge for data sends and
+//                   receipts. Which edge is detected is dependent on the mode.
+//                   - CPHA --> 0 means first edge, 1 means second edge
+//                   - CPOL --> sclk idle position, 0 for low, 1 for high
+//
+// My mistake was just letting the sclk go to the device right from the start and
+// not putting the sclk in an idle position iaw the SPI mode.
+//
+// NEW COMMENTS: Revamped the spi_master to satisfy the SPI mode. Added LEDs to
+//               view the X, Y, Z data. STILL NOT WORKING!!!!
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -36,6 +50,7 @@ module top(
     output SCLK,                // spi clock = 1MHz
     output CSN,                 // ~cs for spi
     output MOSI,                // master coms transmit line
+    output [14:0] LED,
     output [6:0] SEG,           // 7 Segments
     output [7:0] AN             // 8 Anodes - using only 6
     );
@@ -54,12 +69,12 @@ module top(
         .z_data(z)
     );
     
-    sclk_gen cg(
+    iclk_gen i_clock_generation(
         .CLK100MHZ(CLK100MHZ),
         .clk_4MHz(w_4MHz)
     );
     
-    seg7_control s7(
+    seg7_control seven_segment_control(
         .CLK100MHZ(CLK100MHZ),
         .x(x),
         .y(y),
@@ -67,5 +82,9 @@ module top(
         .seg(SEG),
         .digit(AN)   
     );
+    
+    assign LED[14:10] = x[4:0];
+    assign LED[9:5] = y[4:0];
+    assign LED[4:0] = z[4:0];
     
 endmodule
