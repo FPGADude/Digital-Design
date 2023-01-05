@@ -2,7 +2,7 @@
 * Basic Binary Clock Program
 * 
 * By David J. Marion
-* 
+* 1.5.2023
 */
 
 // 4 bits (LEDs) for the hour
@@ -20,7 +20,7 @@ const int m4 = 6;
 const int m5 = 7;
 
 // 1 bit (LED) for the seconds blinker
-const int ledPin = A2;
+const int ledPin = 8;
 
 // 2 buttons (1 to set hours, 1 to set minutes)
 const int hrs_btn = A0;
