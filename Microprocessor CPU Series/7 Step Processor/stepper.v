@@ -3,59 +3,24 @@
 //
 // Verilog HDL implementation of the computer described in the book.
 // Created by: David J. Marion
-// Date: 11.15.2022
-//
+// Date: 4.18.2023
+// Edited: 4.23.23
 // Stepper Module
+// A 7th step is not needed.
 `timescale 1ns / 1ps
 module stepper(
-	input clk,
-	output reg [5:0] step
+	input clk,								// stepper clock
+	input reset,							// system reset
+	output reg [5:0] step = 6'b10_0000		// begin at step 1
 	);
 	
-	parameter [2:0] ONE   = 3'o0,
-					TWO   = 3'o1,
-					THREE = 3'o2,
-					FOUR  = 3'o3,
-					FIVE  = 3'o4,
-					SIX   = 3'o5,
-					SEVEN = 3'o6;
-	
-	reg [2:0] state = ONE;
-	reg [2:0] next_state;
-					
-	always @(posedge clk)
-		state <= next_state;
-		
-	always @*
-		case(state)
-			ONE: 	begin
-						next_state = TWO;
-						step = 6'b10_0000;
-					end
-			TWO:	begin
-						next_state = THREE;
-						step = 6'b01_0000;
-					end
-			THREE: begin
-						next_state = FOUR;
-						step = 6'b00_1000;
-					end
-			FOUR:	begin
-						next_state = FIVE;
-						step = 6'b00_0100;
-					end
-			FIVE: 	begin
-						next_state = SIX;
-						step = 6'b00_0010;
-					end
-			SIX:	begin
-						next_state = SEVEN;
-						step = 6'b00_0001;
-					end
-			SEVEN:	begin
-						next_state = ONE;
-						step = 6'b00_0000;
-					end
-		endcase
-	
+	always @(posedge clk or posedge reset) begin
+		if (reset)
+			step <= 6'b10_0000;				// system reset back to step 1
+		else
+			if (step == 6'b00_0001)			// when we get to last step
+				step <= 6'b10_0000;			// go back to the first step
+			else
+				step <= step >> 1;			// otherwise, shift right by 1 to next step
+	end
 endmodule
