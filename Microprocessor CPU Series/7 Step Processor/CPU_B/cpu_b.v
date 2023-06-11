@@ -9,6 +9,13 @@ module cpu_b(
 // Inputs
 		input in_clk,						// system input clock
 		input reset,						// button or switch
+		
+		// Added inputs for CPU Initialization
+		input loading_ram,
+		input set_mar_init,
+		input [7:0] addr_init,
+		input set_ram_init,
+		input [7:0] instr_from_rom,
 
 // Bidirectional
 		inout [7:0] cpu_interface,			// bidirectional input/output, to/from cpu, outside module comms channel
@@ -16,7 +23,12 @@ module cpu_b(
 // Outputs
 		output enable_input,				// other system module control signal
 		output set_output,					// other system module control signal
-		output data_address					// other system module control signal	
+		output data_address,				// other system module control signal	
+		
+		// Added outputs for CPU Initialization
+		output step_clk,
+		output clk_e,
+		output clk_s
 );
 
 // Internal Signals ------------------------------------------------------------------------------------------------------------------
@@ -61,14 +73,23 @@ module cpu_b(
 		
 		// For IO operations from Control Unit to IO module
 		wire IO_data_address, IO_input_output, IO_clk_e, IO_clk_s;
+		
+		// Added logic for CPU Initialization
+		wire mux_set_mar, mux_set_ram;
+		wire [7:0] mux_mar_in, mux_ram_in;
+		assign mux_set_mar = loading_ram ? set_mar_init : s_mar;
+		assign mux_set_ram = loading_ram ? set_ram_init : s_ram;
+		assign mux_mar_in = loading_ram ? addr_init : to_mar;
+		assign mux_ram_in = loading_ram ? instr_from_rom : to_ram;
+		
 
 // Included Modules - RAM256, ALU, CONTROL UNIT, TMP, BUS1, DATA BUS, GPR FILE, IR, IAR, ACC, FLAGS, IO ---------------------------------
 		ram RAM256(
-			.a(to_mar),								// 8-bit memory address from DATA BUS
-			.sa(s_mar),								// set memory address in memory address register
-			.s(s_ram),								// set data in memory at address
+			.a(mux_mar_in),								// 8-bit memory address from DATA BUS
+			.sa(mux_set_mar),						// set memory address in memory address register
+			.s(mux_set_ram),								// set data in memory at address
 			.e(e_ram),								// enable data out from memory at address
-			.d_in(to_ram),							// 8-bit data to RAM from DATA BUS
+			.d_in(mux_ram_in),							// 8-bit data to RAM from DATA BUS
 			.d_out(from_ram)						// 8-bit data to DATA BUS from RAM
 		);
 
@@ -87,7 +108,7 @@ module cpu_b(
 		control CONTROL_UNIT(
 			.sys_clk(in_clk),						// main system input clock
 			.reset(reset),							// reset stepper to step 1
-			.instruction(cpu_instr),				// 8-bit instruction from IR
+			.instruction(ir_to_control),			// 8-bit instruction from IR
 			.flags(flags_to_control),				// 4-bit from FLAGS (CAEZ)
 			.s_R0(s_r0), 							// set R0
 			.s_R1(s_r1), 							// set R1
@@ -114,7 +135,10 @@ module cpu_b(
 			.IO_input_or_output(IO_input_output),	// IO input/output
 			.IO_data_or_address(IO_data_address),	// IO data/address
 			.step(step),							// 6-bit step to DATA BUS
-			.flags_detected(flags_detected)			// 1-bit flag detected to DATA BUS
+			.flags_detected(flags_detected),		// 1-bit flag detected to DATA BUS
+			.stepper_clk(step_clk),					// for CPU init
+			.clk_e(clk_e),							// for CPU init
+			.clk_s(clk_s)							// for CPU init
 		);
 
 		tmp TMP(
