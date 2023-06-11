@@ -49,9 +49,12 @@ module control(
 		
 	// Added outputs for CPU_B
 		output [1:6] step, output flags_detected,
+		
+	// Added outputs for CPU Initialization
+		output stepper_clk, clk_e, clk_s
 );
 	// Internal Wire Signals
-		wire clk_e, clk_s, stepper_clk;
+		//wire clk_e, clk_s, stepper_clk;
 		wire [1:0] dec1_in, dec2_in, dec3_in;
 		wire [3:0] dec1_out, dec2_out, dec3_out;
 		wire [2:0] dec4_in;
