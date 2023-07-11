@@ -1,0 +1,73 @@
+OPCODES:
+ 01234567 (bits are reversed?)
+ 000sAABB = LD Ra, Rb or ST Ra, Rb
+    │└┤└┴── Reg B
+    │ └──── Reg A
+    └────── 0=load (LD), 1=store (ST)
+
+ 001000BB = DATA Rb, (number) (immediate addressing mode)
+       └┴── Reg B
+
+ 001100BB = JMPR Rb (jump to address in Rb)
+       └┴── Reg B
+
+ 01000000 = JUMP to address in next byte
+ 
+ 0101caez = JC, JA, JE, JZ (conditionals) (jump to address in next byte)
+     │││└── Zero Flag
+     ││└─── Equal flag
+     │└──── A larger flag
+     └───── Carry flag
+
+ 01100000 = CLF (clear all flags)
+
+ 0111daBB = IN Rb or OUT Rb or IN @Rb or OUT @Rb
+     ││└┴── Reg B
+     │└──── 0=data (IN Rb), 1=address (IN @Rb)
+     └───── 0=input, 1=output
+
+one-byte opcodes:         two-byte opcodes:
+  LD Ra, Rb                 DATA Rb, number
+  ST Ra, Rb                 JUMP address
+  JMPR Rb
+  JA address
+  JC address
+  JE address
+  JZ address
+  CLF
+  IN Rb
+  IN @Rb
+  OUT Rb
+  OUT @Rb
+
+0-operand mnemonics        1-operand mnemonics        2-operand mnemonics
+CLF                        JUMP                       LD
+                           JMPR                       ST
+                           JA                         DATA
+                           JC
+                           JE
+                           JZ
+                           IN (both)
+                           OUT (both)
+
+Labels:
+  alpha or '_' or '$' first character
+  alpha or digit or '_' or '$' next characters
+  ':'
+  Goodlabel:
+  $Stillgood:
+  _Also_good:
+  Badlabel (no colon)
+  3Badlabel (starts with digit)  
+
+Register names:
+  R0, R1, R2, R3
+
+Directives: (all start with dot(.))
+  .ORG  value                         Set current address
+  .BYTE number, number, number,....   generate 1-byte data
+  .SHORT number, number, number,....  generate 2-byte data
+  .ASCII "literal string"             Generate ASCII string data
+                                         (NOT 0-terminated)
+  .EQU label, number                  New label with value
+
