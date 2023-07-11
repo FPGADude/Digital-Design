@@ -4,23 +4,31 @@
 // Verilog HDL implementation of the computer described in the book.
 // Created by: David J. Marion
 // Date: 4.18.2023
-// Edited: 4.23.23
+// Edited: 6.14.23
 // Stepper Module
-// A 7th step is not needed.
+//
+// * Adding a step 0 for a reset state.
+// * Now the CPU is a 7-Step Processor again.
+// **************************************************************************************
 `timescale 1ns / 1ps
 module stepper(
 	input clk,								// stepper clock
 	input reset,							// system reset
-	output reg [5:0] step = 6'b10_0000		// begin at step 1
+	output [5:0] step						// control unit signals
 	);
+	
+	reg [6:0] step_reg = 7'b100_0000;		// start at step 0
 	
 	always @(posedge clk or posedge reset) begin
 		if (reset)
-			step <= 6'b10_0000;				// system reset back to step 1
+			step_reg <= 7'b100_0000;				// system reset back to step 0
 		else
-			if (step == 6'b00_0001)			// when we get to last step
-				step <= 6'b10_0000;			// go back to the first step
+			if (step_reg == 7'b000_0001)			// when we get to step 6
+				step_reg <= 7'b010_0000;			// go back to step 1, not step 0
 			else
-				step <= step >> 1;			// otherwise, shift right by 1 to next step
+				step_reg <= step_reg >> 1;			// otherwise, shift right by 1 to next step
 	end
+	
+	assign step = step_reg[5:0];					// Only output 6/7 steps
+	
 endmodule

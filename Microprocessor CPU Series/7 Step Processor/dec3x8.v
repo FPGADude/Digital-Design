@@ -6,6 +6,9 @@
 // Date: 11.15.2022
 //
 // 3 to 8 Decoder in the Control Unit
+//
+// * No changes required for CPU_B
+// ******************************************************************************
 `timescale 1ns / 1ps
 module dec3x8(
 	input [2:0] dec_in,			// 3-bit select

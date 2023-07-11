@@ -18,7 +18,8 @@ module alu_TB;
 	parameter [2:0] ADD = 3'o0,
 					RSH = 3'o1,
 					LSH = 3'o2,
-					NOT = 3'o3,
+					//NOT = 3'o3,
+					DEC = 3'o3,
 					AND = 3'o4,
 					OR  = 3'o5,
 					XOR = 3'o6,
@@ -74,7 +75,8 @@ module alu_TB;
 		#1;
 		
 		A = 8'haa;		// <- 8'b1010_1010
-		op = NOT;		// -> 8'b0101_0101
+		//op = NOT;		// -> 8'b0101_0101
+		op = DEC;		// -> 8'b1010_1001
 		#1;
 		
 		B = 8'h55;		// <- 8'b0101_0101

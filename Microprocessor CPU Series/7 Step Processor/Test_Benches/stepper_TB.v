@@ -29,12 +29,12 @@ module stepper_TB;
 	initial begin
 		clk = 0;	// Initialize clock 
 		reset = 1;
-		#50 reset = 0;
+		#10 reset = 0;
 		
-		#100 reset = 1;
-		#50 reset = 0;
+		#50 reset = 1;
+		#20 reset = 0;
 			
-		#100 $finish;
+		#50 $finish;
 	end
 
 

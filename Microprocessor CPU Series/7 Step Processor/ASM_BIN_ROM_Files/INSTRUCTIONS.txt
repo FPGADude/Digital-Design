@@ -1,0 +1,31 @@
+Steps to Prepare a Program for CPU_B
+By: David J. Marion
+Date: 6.18.2023
+
+1. Write an assembly program and save it using the .asm file extension.
+
+2. Assemble the program.
+	(For Windows)
+	a. Open the folder containing the .asm file.
+	b. Open a separate folder containing the assembler program.
+	c. Drag and drop the .asm file onto the assembler program icon.
+	(For Linux)
+	a. 
+* You should now see a .bin file of the same name as the .asm file.
+
+3. Generate a rom.v file for the CPU instructions in the .bin file.
+	a. Open the bin2rom.py file in a text editor.
+	b. Set the program_name variable equal to the program name.
+	c. Save the file.
+	d. Open a command prompt terminal.
+	e. Navigate to the directory containing the bin2rom.py program.
+	f. Ensure the .bin file to be processed is in this directory.
+	g. Run the bin2rom.py file at the command prompt: py bin2rom.py
+* You should now see a Verilog file named program_name_rom.v in the folder.
+* Use the rom Test Bench rom_TB.v to verify the ROM (if you want to).
+
+4. Configure the CPU Initialization module for the ROM.
+	a. Open the cpu_init.v file in a text editor.
+	b. Edit the name of the _rom.v file for the ROM module instantiation.
+
+* This completes the instructions for how to prepare a program for CPU_B.

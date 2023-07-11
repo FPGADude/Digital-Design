@@ -6,6 +6,9 @@
 // Date: 11.15.2022
 //
 // 2 to 4 Decoder in the Control Unit
+//
+// * No changes required for CPU_B
+// ******************************************************************************
 `timescale 1ns / 1ps
 module dec2x4(
 	input [1:0] dec_in,			// 2-bit select

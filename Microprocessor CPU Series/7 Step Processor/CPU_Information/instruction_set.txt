@@ -1,0 +1,158 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+The 7-Step Processor:
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+The instruction register is 8-bits.
+All instructions are one or two bytes.
+
+1st byte
+bit[0] = instruction code (1 = ALU or 0 = Non-ALU)
+bit[1, 2, 3] = ALU Opcode or Non-ALU Operation Code
+bit[4,5] = Register A
+bit[6,7] = Register B
+
+2nd byte
+8 bits of Data or Address
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** ALU Instructions ***
+
+[0] [1][2][3] [4][5] [6][7]
+ 
+(8) alu op codes x (4) register codes x (4) register codes
+8*4*4 = 128 different instruction combinations
+
+[0] <-- a 1 signifies an ALU instruction
+
+[1][2][3] <-- alu opcode
+	000 = ADD
+	001 = RSH
+	010 = LSH
+	011 = NOT
+	100 = AND
+	101 = OR
+	110 = XOR
+	111 = CMP
+
+[4][5] <-- Register A
+	00 = R0
+	01 = R1
+	10 = R2
+	11 = R3
+	
+[6][7] <-- Register B
+	00 = R0
+	01 = R1
+	10 = R2
+	11 = R3
+	
+*** The alu result is placed in Register B, for both 1 operand and 2 operand instructions
+*** For one operand instructions data can come from and end up in the same register
+*** CMP operation does not store its output byte
+
+
+********** All other instructions have 0 in the first bit **************************************
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Load/Store Instructions ***
+LD, ST
+
+[0][1][2][3][4][5][6][7]
+
+[0][1][2] <-- 000 signifies a load/store instruction
+
+[3] <-- 0 = load, 1 = store
+
+[4][5] <-- Register A
+
+[6][7] <-- Register B
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Data Instruction *** (2-Byte Instruction)
+DATA
+
+[0][1][2][3][4][5][6][7] / [0][1][2][3][4][5][6][7]
+
+1st byte
+[0][1][2][3] <-- 0010 signifies data instruction
+
+[4][5] <-- 00 NOT USED
+
+[6][7] <-- Register B gets loaded with the second byte in instruction
+
+2nd byte
+[0][1][2][3][4][5][6][7] <-- Any data byte
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Jump to Address in Register Instruction ***
+JMPR
+
+[0][1][2][3][4][5][6][7]
+
+[0][1][2][3] <-- 0011 signifies a jump register instruction
+
+[4][5] <-- 00 NOT USED
+
+[6][7] <-- Register B holds the address to jump to
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Jump to Address *** (2-Byte Instruction)
+JMP
+
+[0][1][2][3][4][5][6][7] -- [0][1][2][3][4][5][6][7]
+
+1st byte
+[0][1][2][3][4][5][6][7] <-- 0100 0000 signifies a jump instruction
+
+2nd byte
+[0][1][2][3][4][5][6][7] <-- the address to jump to
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Jump If to Address *** (2-Byte Instruction)
+JC, JA, JE, JZ
+
+[0][1][2][3][4][5][6][7] -- [0][1][2][3][4][5][6][7]
+
+1st byte
+[0][1][2][3] <-- 0101 signifies a jump if instruction
+
+[4] <-- carry flag
+[5] <-- a larger flag
+[6] <-- equal flag
+[7] <-- zero flag
+
+2nd byte
+[0][1][2][3][4][5][6][7] <-- the address to jump to
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Clear Flags ***
+CLF
+
+[0][1][2][3][4][5][6][7]
+
+[0][1][2][3] <-- 0110 signifies a clear flags instruction
+
+[4][5][6][7] <-- 0000 NOT USED
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+*** Input/Output ***
+IN, OUT
+
+[0][1][2][3][4][5][6][7]
+
+[0][1][2][3] <-- 0111 signifies an I/O instruction
+
+[4] <-- 0 = Input, 1 = Output 
+
+[5] <-- 0 = Data, 1 = Address
+
+[6][7] <-- Register B holds the data or address
+
+
+********** END OF FILE *********************************************************************

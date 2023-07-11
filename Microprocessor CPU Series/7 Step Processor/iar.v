@@ -23,9 +23,9 @@ module iar(
 	
 	always @(*) begin
 		if(reset)
-			addr_reg <= 8'h00;				// reset instruction address to the beginning of memory space
+			addr_reg = 8'h00;				// reset instruction address to the beginning of memory space
 		else if(s)
-			addr_reg <= a_in;				// set IAR with input address
+			addr_reg = a_in;				// set IAR with input address
 	end
 	
 	assign a_out = e ? addr_reg : 8'h00;	

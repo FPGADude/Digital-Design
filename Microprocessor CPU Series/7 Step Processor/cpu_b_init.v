@@ -9,6 +9,13 @@ module cpu_b(
 // Inputs
 		input in_clk,						// system input clock
 		input reset,						// button or switch
+		
+		// Added inputs for CPU Initialization
+		input loading_ram,
+		input set_mar_init,
+		input [7:0] addr_init,
+		input set_ram_init,
+		input [7:0] instr_from_rom,
 
 // Bidirectional
 		inout [7:0] cpu_interface,			// bidirectional input/output, to/from cpu, outside module comms channel
@@ -16,7 +23,12 @@ module cpu_b(
 // Outputs
 		output enable_input,				// other system module control signal
 		output set_output,					// other system module control signal
-		output data_address,				// other system module control signal		
+		output data_address,				// other system module control signal	
+		
+		// Added outputs for CPU Initialization
+		output step_clk,
+		output clk_e,
+		output clk_s
 );
 
 // Internal Signals ------------------------------------------------------------------------------------------------------------------
@@ -61,6 +73,14 @@ module cpu_b(
 		
 		// For IO operations from Control Unit to IO module
 		wire IO_data_address, IO_input_output, IO_clk_e, IO_clk_s;
+		
+		// Added logic for CPU Initialization
+		wire mux_set_mar, mux_set_ram;
+		wire [7:0] mux_mar_in, mux_ram_in;
+		assign mux_set_mar = loading_ram ? set_mar_init : s_mar;
+		assign mux_set_ram = loading_ram ? set_ram_init : s_ram;
+		assign mux_mar_in = loading_ram ? addr_init : to_mar;
+		assign mux_ram_in = loading_ram ? instr_from_rom : to_ram;
 		
 
 // Included Modules - RAM256, ALU, CONTROL UNIT, TMP, BUS1, DATA BUS, GPR FILE, IR, IAR, ACC, FLAGS, IO ---------------------------------

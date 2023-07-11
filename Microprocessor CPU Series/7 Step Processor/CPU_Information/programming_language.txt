@@ -1,0 +1,62 @@
+pg. 122
+Programming language for the ButHowDoItKnow? processor.
+
+	Language					Meaning
+---------------------------------------------------------------------------------------------------------------------------
+*ALU INSTRUCTIONS*
+	ADD RA,RB					Add RA and RB and put result in RB
+	RSH RA,RB					Shift RA right and put result in RB
+	LSH RA,RB					Shift RA left and put result in RB
+	NOT	RA,RB					Negate RA and put result in RB
+	AND	RA,RB					And RA with RB and put result in RB
+	OR	RA,RB					Or RA with RB and put result in RB
+	XOR	RA,RB					Exclusive Or RA with RB and put result in RB
+	CMP	RA,RB					Compare RA with RB (sets flags, RB remains unchanged)
+
+
+*LOAD/STORE INSTRUCTIONS*
+	LD RA,RB					Load RB with data from memory address stored in RA
+	ST RA,RB					Store RB data to memory address stored in RA 
+
+
+*DATA INSTRUCTION* (2-byte instruction)
+	DATA RB,xxxx xxxx				Load this byte into RB 
+
+
+*JUMP REGISTER INSTRUCTION*
+	JMPR RB						Jump to the address stored in RB
+
+
+*JUMP INSTRUCTION* (2-byte instruction)
+	JMP Addr					Jump to the address in the next byte in memory
+
+
+* JUMP IF INSTRUCTIONS*
+	JC Addr						Jump to the address if carry flag set
+	JA Addr						Jump to the address if A > B
+	JE Addr						Jump to the address if A = B
+	JZ Addr						Jump to the address if the alu result is 0
+** Can also check for multiple or all flags **
+	JCA
+	JCE
+	JCZ
+	JAE
+	JAZ
+	JEZ
+	JCAE
+	JCAZ
+	JAEZ
+	JCAEZ
+
+
+* CLEAR FLAGS INSTRUCTION *
+	CLF							Clear all the flags (zeroize the flag register)
+	
+
+* I/O INSTRUCTIONS *
+	IN  Data,RB					Input I/O data to RB
+	IN  Addr,RB					Input I/O address to RB
+	OUT Data,RB					Output RB to I/O as data
+	OUT Addr,RB					Output RB to I/O as address
+
+********** END OF FILE *********************************************************************
