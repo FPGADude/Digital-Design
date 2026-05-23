@@ -38,14 +38,14 @@ module ram(
             mem_reg[i] = 8'h00;
 
         // Fibonacci program, 18 bytes
-        mem_reg[0]  = 8'b00100000;
-        mem_reg[1]  = 8'b00000000;
-        mem_reg[2]  = 8'b00100001;
-        mem_reg[3]  = 8'b00000001;
-        mem_reg[4]  = 8'b00100010;
-        mem_reg[5]  = 8'b11111111;
-        mem_reg[6]  = 8'b00100011;
-        mem_reg[7]  = 8'b00000110;
+        mem_reg[0]  = 8'b00100000; // DATA R0
+        mem_reg[1]  = 8'b00000000; // 0
+        mem_reg[2]  = 8'b00100001; // DATA R1
+        mem_reg[3]  = 8'b00000001; // 1
+        mem_reg[4]  = 8'b00100010; // DATA R2
+        mem_reg[5]  = 8'b11111111; // 255
+        mem_reg[6]  = 8'b00100011; // DATA R3
+        mem_reg[7]  = 8'b00000110; // 6
         mem_reg[8]  = 8'b10000100; // ADD R1,R0
         mem_reg[9]  = 8'b01111000; // OUT R0
         mem_reg[10] = 8'b10000001; // ADD R0,R1

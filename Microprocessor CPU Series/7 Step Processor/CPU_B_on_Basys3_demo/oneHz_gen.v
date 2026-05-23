@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Updated to 10Hz for quicker demo execution
+
 module oneHz_gen(
     input clk_100MHz,
     input reset,

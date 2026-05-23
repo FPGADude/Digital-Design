@@ -5,12 +5,12 @@ module cpu_b_top(
     input btnC,         // reset
     output [3:0] an,
     output [0:6] seg,
-    output [15:0] led
+    output [3:0] clocks,
+    output [15:8] led
 );
 
     wire clk_10Hz;
     wire step_clk, clk_e, clk_s;
-    wire loading_ram = 1'b0;
     wire set_addr = 1'b0;
     wire set_ram = 1'b0;
     wire [7:0] address = 8'h00;
@@ -34,10 +34,10 @@ module cpu_b_top(
         .clk_10Hz(clk_10Hz)
     );
 
-    always @(posedge set_output or posedge btnC) begin
+    always @(posedge clk_10Hz or posedge btnC) begin
         if (btnC)
             fib_value <= 8'd0;
-        else if (!data_address)
+        else if (set_output && !data_address)
             fib_value <= cpu_interface;
     end
 
@@ -63,31 +63,19 @@ module cpu_b_top(
     cpu_b CPU(
         .in_clk(clk_10Hz),
         .reset(btnC),
-
-        .loading_ram(loading_ram),
-        .set_mar_init(set_addr),
-        .addr_init(address),
-        .set_ram_init(set_ram),
-        .instr_from_rom(instruction),
-
         .cpu_interface(cpu_interface),
         .enable_input(enable_input),
         .set_output(set_output),
         .data_address(data_address),
-
         .step_clk(step_clk),
         .clk_e(clk_e),
         .clk_s(clk_s)
     );
     
-    assign led[0] = loading_ram;
-    assign led[1] = clk_10Hz;
-    assign led[2] = step_clk;
-    assign led[3] = clk_e;
-    assign led[4] = clk_s;
-    assign led[5] = set_output;
-    assign led[6] = data_address;
-    assign led[7] = |fib_value;
+    assign clocks[0] = clk_10Hz;
+    assign clocks[1] = step_clk;
+    assign clocks[2] = clk_e;
+    assign clocks[3] = clk_s;
     assign led[15:8] = cpu_interface;
 
 endmodule
