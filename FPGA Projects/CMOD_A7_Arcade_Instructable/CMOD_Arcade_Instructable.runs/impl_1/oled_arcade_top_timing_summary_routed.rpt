@@ -1,0 +1,2655 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sat Jun 27 15:02:55 2026
+| Host         : Frank-Rizzo running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file oled_arcade_top_timing_summary_routed.rpt -pb oled_arcade_top_timing_summary_routed.pb -rpx oled_arcade_top_timing_summary_routed.rpx -warn_on_violation
+| Design       : oled_arcade_top
+| Device       : 7a15t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity  Description                       Violations  
+---------  --------  --------------------------------  ----------  
+HPDR-1     Warning   Port pin direction inconsistency  1           
+TIMING-18  Warning   Missing input or output delay     12          
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (8)
+6. checking no_output_delay (4)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (8)
+------------------------------
+ There are 8 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (4)
+-------------------------------
+ There are 4 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     67.138        0.000                      0                 2190        0.152        0.000                      0                 2190       41.166        0.000                       0                   930  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 41.667}     83.333          12.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin        67.138        0.000                      0                 2190        0.152        0.000                      0                 2190       41.166        0.000                       0                   930  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+(none)        sys_clk_pin                 
+(none)                      sys_clk_pin   
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            0  Failing Endpoints,  Worst Slack       67.138ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.152ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       41.166ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             67.138ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        16.154ns  (logic 2.220ns (13.742%)  route 13.934ns (86.258%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT3=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.810ns = ( 88.143 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 r  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.388    14.451    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X46Y36         LUT3 (Prop_lut3_I1_O)        0.150    14.601 r  oled_arcade/invaders_inst/tx_b2[7]_i_148/O
+                         net (fo=12, routed)          1.370    15.970    oled_arcade/invaders_inst/tx_b2[7]_i_148_n_0
+    SLICE_X48Y34         LUT6 (Prop_lut6_I4_O)        0.348    16.318 f  oled_arcade/invaders_inst/tx_b2[2]_i_42/O
+                         net (fo=1, routed)           0.655    16.973    oled_arcade/invaders_inst/tx_b2[2]_i_42_n_0
+    SLICE_X49Y34         LUT6 (Prop_lut6_I4_O)        0.124    17.097 f  oled_arcade/invaders_inst/tx_b2[2]_i_22/O
+                         net (fo=1, routed)           0.859    17.957    oled_arcade/invaders_inst/tx_b2[2]_i_22_n_0
+    SLICE_X47Y34         LUT6 (Prop_lut6_I2_O)        0.124    18.081 r  oled_arcade/invaders_inst/tx_b2[2]_i_8/O
+                         net (fo=1, routed)           0.947    19.028    oled_arcade/invaders_inst/tx_b2[2]_i_8_n_0
+    SLICE_X47Y24         LUT6 (Prop_lut6_I1_O)        0.124    19.152 r  oled_arcade/invaders_inst/tx_b2[2]_i_5/O
+                         net (fo=2, routed)           1.288    20.440    oled_arcade/invaders_inst/tx_b2[2]_i_5_n_0
+    SLICE_X54Y18         LUT5 (Prop_lut5_I0_O)        0.124    20.564 r  oled_arcade/invaders_inst/tx_b2[2]_i_4/O
+                         net (fo=1, routed)           0.571    21.135    oled_arcade/invaders_inst/tx_b2[2]_i_4_n_0
+    SLICE_X55Y16         LUT5 (Prop_lut5_I4_O)        0.124    21.259 r  oled_arcade/invaders_inst/tx_b2[2]_i_1/O
+                         net (fo=1, routed)           0.000    21.259    oled_arcade/invaders_inst_n_8
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.445    88.143    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[2]/C
+                         clock pessimism              0.259    88.402    
+                         clock uncertainty           -0.035    88.367    
+    SLICE_X55Y16         FDRE (Setup_fdre_C_D)        0.031    88.398    oled_arcade/tx_b2_reg[2]
+  -------------------------------------------------------------------
+                         required time                         88.398    
+                         arrival time                         -21.259    
+  -------------------------------------------------------------------
+                         slack                                 67.138    
+
+Slack (MET) :             67.304ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        15.988ns  (logic 2.448ns (15.312%)  route 13.540ns (84.688%))
+  Logic Levels:           10  (CARRY4=1 LUT2=2 LUT3=1 LUT5=1 LUT6=5)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.809ns = ( 88.142 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 r  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.130    14.193    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X47Y36         LUT3 (Prop_lut3_I1_O)        0.124    14.317 r  oled_arcade/invaders_inst/tx_b2[7]_i_149/O
+                         net (fo=14, routed)          0.689    15.006    oled_arcade/invaders_inst/tx_b2[7]_i_149_n_0
+    SLICE_X46Y35         LUT5 (Prop_lut5_I3_O)        0.150    15.156 f  oled_arcade/invaders_inst/tx_b2[7]_i_50/O
+                         net (fo=9, routed)           1.350    16.506    oled_arcade/invaders_inst/tx_b2[7]_i_50_n_0
+    SLICE_X49Y33         LUT2 (Prop_lut2_I1_O)        0.374    16.880 r  oled_arcade/invaders_inst/tx_b2[7]_i_66/O
+                         net (fo=1, routed)           0.491    17.371    oled_arcade/invaders_inst/tx_b2[7]_i_66_n_0
+    SLICE_X48Y34         LUT6 (Prop_lut6_I1_O)        0.326    17.697 r  oled_arcade/invaders_inst/tx_b2[7]_i_19/O
+                         net (fo=1, routed)           0.636    18.333    oled_arcade/invaders_inst/tx_b2[7]_i_19_n_0
+    SLICE_X47Y32         LUT6 (Prop_lut6_I5_O)        0.124    18.457 r  oled_arcade/invaders_inst/tx_b2[7]_i_5/O
+                         net (fo=1, routed)           0.986    19.443    oled_arcade/invaders_inst/tx_b2[7]_i_5_n_0
+    SLICE_X47Y22         LUT6 (Prop_lut6_I1_O)        0.124    19.567 r  oled_arcade/invaders_inst/tx_b2[7]_i_3/O
+                         net (fo=1, routed)           1.402    20.969    oled_arcade/invaders_inst/tx_b2[7]_i_3_n_0
+    SLICE_X55Y17         LUT6 (Prop_lut6_I2_O)        0.124    21.093 r  oled_arcade/invaders_inst/tx_b2[7]_i_1/O
+                         net (fo=1, routed)           0.000    21.093    oled_arcade/invaders_inst_n_3
+    SLICE_X55Y17         FDRE                                         r  oled_arcade/tx_b2_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.444    88.142    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y17         FDRE                                         r  oled_arcade/tx_b2_reg[7]/C
+                         clock pessimism              0.259    88.401    
+                         clock uncertainty           -0.035    88.366    
+    SLICE_X55Y17         FDRE (Setup_fdre_C_D)        0.031    88.397    oled_arcade/tx_b2_reg[7]
+  -------------------------------------------------------------------
+                         required time                         88.397    
+                         arrival time                         -21.093    
+  -------------------------------------------------------------------
+                         slack                                 67.304    
+
+Slack (MET) :             67.645ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        15.646ns  (logic 2.450ns (15.659%)  route 13.196ns (84.341%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT3=1 LUT4=1 LUT5=2 LUT6=4)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.810ns = ( 88.143 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 f  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.388    14.451    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X46Y36         LUT3 (Prop_lut3_I1_O)        0.150    14.601 f  oled_arcade/invaders_inst/tx_b2[7]_i_148/O
+                         net (fo=12, routed)          1.377    15.978    oled_arcade/invaders_inst/tx_b2[7]_i_148_n_0
+    SLICE_X48Y34         LUT5 (Prop_lut5_I3_O)        0.376    16.354 r  oled_arcade/invaders_inst/tx_b2[7]_i_49/O
+                         net (fo=6, routed)           0.503    16.857    oled_arcade/invaders_inst/tx_b2[7]_i_49_n_0
+    SLICE_X49Y37         LUT4 (Prop_lut4_I2_O)        0.326    17.183 f  oled_arcade/invaders_inst/tx_b2[5]_i_18/O
+                         net (fo=1, routed)           0.514    17.697    oled_arcade/invaders_inst/tx_b2[5]_i_18_n_0
+    SLICE_X47Y37         LUT6 (Prop_lut6_I5_O)        0.124    17.821 r  oled_arcade/invaders_inst/tx_b2[5]_i_5/O
+                         net (fo=1, routed)           0.982    18.802    oled_arcade/invaders_inst/tx_b2[5]_i_5_n_0
+    SLICE_X47Y24         LUT6 (Prop_lut6_I0_O)        0.124    18.926 r  oled_arcade/invaders_inst/tx_b2[5]_i_3/O
+                         net (fo=1, routed)           1.281    20.208    oled_arcade/invaders_inst/tx_b2[5]_i_3_n_0
+    SLICE_X54Y17         LUT5 (Prop_lut5_I0_O)        0.124    20.332 r  oled_arcade/invaders_inst/tx_b2[5]_i_2/O
+                         net (fo=1, routed)           0.295    20.627    oled_arcade/invaders_inst/tx_b2[5]_i_2_n_0
+    SLICE_X55Y16         LUT6 (Prop_lut6_I5_O)        0.124    20.751 r  oled_arcade/invaders_inst/tx_b2[5]_i_1/O
+                         net (fo=1, routed)           0.000    20.751    oled_arcade/invaders_inst_n_5
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.445    88.143    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[5]/C
+                         clock pessimism              0.259    88.402    
+                         clock uncertainty           -0.035    88.367    
+    SLICE_X55Y16         FDRE (Setup_fdre_C_D)        0.029    88.396    oled_arcade/tx_b2_reg[5]
+  -------------------------------------------------------------------
+                         required time                         88.396    
+                         arrival time                         -20.751    
+  -------------------------------------------------------------------
+                         slack                                 67.645    
+
+Slack (MET) :             67.917ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        15.372ns  (logic 2.114ns (13.752%)  route 13.258ns (86.248%))
+  Logic Levels:           9  (CARRY4=1 LUT2=1 LUT5=1 LUT6=5 MUXF7=1)
+  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.808ns = ( 88.141 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 f  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.687    14.750    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X46Y37         LUT6 (Prop_lut6_I1_O)        0.124    14.874 r  oled_arcade/invaders_inst/tx_b2[7]_i_43/O
+                         net (fo=5, routed)           1.429    16.302    oled_arcade/invaders_inst/tx_b2[7]_i_43_n_0
+    SLICE_X52Y36         LUT6 (Prop_lut6_I3_O)        0.124    16.426 r  oled_arcade/invaders_inst/tx_b2[3]_i_27/O
+                         net (fo=1, routed)           0.593    17.019    oled_arcade/invaders_inst/tx_b2[3]_i_27_n_0
+    SLICE_X48Y36         LUT6 (Prop_lut6_I3_O)        0.124    17.143 r  oled_arcade/invaders_inst/tx_b2[3]_i_9/O
+                         net (fo=1, routed)           1.544    18.687    oled_arcade/invaders_inst/tx_b2[3]_i_9_n_0
+    SLICE_X45Y19         LUT6 (Prop_lut6_I0_O)        0.124    18.811 r  oled_arcade/invaders_inst/tx_b2[3]_i_4/O
+                         net (fo=1, routed)           0.000    18.811    oled_arcade/invaders_inst/tx_b2[3]_i_4_n_0
+    SLICE_X45Y19         MUXF7 (Prop_muxf7_I1_O)      0.217    19.028 r  oled_arcade/invaders_inst/tx_b2_reg[3]_i_2/O
+                         net (fo=1, routed)           1.150    20.178    oled_arcade/invaders_inst/tx_b2_reg[3]_i_2_n_0
+    SLICE_X57Y18         LUT5 (Prop_lut5_I2_O)        0.299    20.477 r  oled_arcade/invaders_inst/tx_b2[3]_i_1/O
+                         net (fo=1, routed)           0.000    20.477    oled_arcade/invaders_inst_n_7
+    SLICE_X57Y18         FDRE                                         r  oled_arcade/tx_b2_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.443    88.141    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X57Y18         FDRE                                         r  oled_arcade/tx_b2_reg[3]/C
+                         clock pessimism              0.259    88.400    
+                         clock uncertainty           -0.035    88.365    
+    SLICE_X57Y18         FDRE (Setup_fdre_C_D)        0.029    88.394    oled_arcade/tx_b2_reg[3]
+  -------------------------------------------------------------------
+                         required time                         88.394    
+                         arrival time                         -20.477    
+  -------------------------------------------------------------------
+                         slack                                 67.917    
+
+Slack (MET) :             67.989ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        15.304ns  (logic 2.450ns (16.009%)  route 12.854ns (83.991%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT3=1 LUT4=1 LUT5=2 LUT6=4)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.810ns = ( 88.143 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 f  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.388    14.451    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X46Y36         LUT3 (Prop_lut3_I1_O)        0.150    14.601 f  oled_arcade/invaders_inst/tx_b2[7]_i_148/O
+                         net (fo=12, routed)          1.377    15.978    oled_arcade/invaders_inst/tx_b2[7]_i_148_n_0
+    SLICE_X48Y34         LUT5 (Prop_lut5_I3_O)        0.376    16.354 r  oled_arcade/invaders_inst/tx_b2[7]_i_49/O
+                         net (fo=6, routed)           0.555    16.909    oled_arcade/invaders_inst/tx_b2[7]_i_49_n_0
+    SLICE_X50Y36         LUT4 (Prop_lut4_I3_O)        0.326    17.235 f  oled_arcade/invaders_inst/tx_b2[6]_i_16/O
+                         net (fo=1, routed)           0.296    17.531    oled_arcade/invaders_inst/tx_b2[6]_i_16_n_0
+    SLICE_X51Y36         LUT6 (Prop_lut6_I5_O)        0.124    17.655 r  oled_arcade/invaders_inst/tx_b2[6]_i_5/O
+                         net (fo=1, routed)           1.394    19.049    oled_arcade/invaders_inst/tx_b2[6]_i_5_n_0
+    SLICE_X53Y22         LUT6 (Prop_lut6_I0_O)        0.124    19.173 r  oled_arcade/invaders_inst/tx_b2[6]_i_3/O
+                         net (fo=1, routed)           0.525    19.698    oled_arcade/invaders_inst/tx_b2[6]_i_3_n_0
+    SLICE_X54Y17         LUT5 (Prop_lut5_I0_O)        0.124    19.822 r  oled_arcade/invaders_inst/tx_b2[6]_i_2/O
+                         net (fo=1, routed)           0.463    20.285    oled_arcade/invaders_inst/tx_b2[6]_i_2_n_0
+    SLICE_X55Y16         LUT6 (Prop_lut6_I5_O)        0.124    20.409 r  oled_arcade/invaders_inst/tx_b2[6]_i_1/O
+                         net (fo=1, routed)           0.000    20.409    oled_arcade/invaders_inst_n_4
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.445    88.143    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[6]/C
+                         clock pessimism              0.259    88.402    
+                         clock uncertainty           -0.035    88.367    
+    SLICE_X55Y16         FDRE (Setup_fdre_C_D)        0.031    88.398    oled_arcade/tx_b2_reg[6]
+  -------------------------------------------------------------------
+                         required time                         88.398    
+                         arrival time                         -20.409    
+  -------------------------------------------------------------------
+                         slack                                 67.989    
+
+Slack (MET) :             68.252ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        15.039ns  (logic 2.450ns (16.291%)  route 12.589ns (83.709%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT3=1 LUT4=1 LUT5=2 LUT6=4)
+  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.808ns = ( 88.141 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 f  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.388    14.451    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X46Y36         LUT3 (Prop_lut3_I1_O)        0.150    14.601 f  oled_arcade/invaders_inst/tx_b2[7]_i_148/O
+                         net (fo=12, routed)          1.377    15.978    oled_arcade/invaders_inst/tx_b2[7]_i_148_n_0
+    SLICE_X48Y34         LUT5 (Prop_lut5_I3_O)        0.376    16.354 r  oled_arcade/invaders_inst/tx_b2[7]_i_49/O
+                         net (fo=6, routed)           0.680    17.034    oled_arcade/invaders_inst/tx_b2[7]_i_49_n_0
+    SLICE_X50Y33         LUT4 (Prop_lut4_I3_O)        0.326    17.360 f  oled_arcade/invaders_inst/tx_b2[1]_i_17/O
+                         net (fo=1, routed)           0.592    17.952    oled_arcade/invaders_inst/tx_b2[1]_i_17_n_0
+    SLICE_X50Y35         LUT6 (Prop_lut6_I5_O)        0.124    18.076 r  oled_arcade/invaders_inst/tx_b2[1]_i_5/O
+                         net (fo=1, routed)           0.738    18.813    oled_arcade/invaders_inst/tx_b2[1]_i_5_n_0
+    SLICE_X49Y23         LUT6 (Prop_lut6_I0_O)        0.124    18.937 r  oled_arcade/invaders_inst/tx_b2[1]_i_3/O
+                         net (fo=1, routed)           0.661    19.598    oled_arcade/invaders_inst/tx_b2[1]_i_3_n_0
+    SLICE_X54Y18         LUT5 (Prop_lut5_I0_O)        0.124    19.722 r  oled_arcade/invaders_inst/tx_b2[1]_i_2/O
+                         net (fo=1, routed)           0.298    20.020    oled_arcade/invaders_inst/tx_b2[1]_i_2_n_0
+    SLICE_X57Y18         LUT6 (Prop_lut6_I5_O)        0.124    20.144 r  oled_arcade/invaders_inst/tx_b2[1]_i_1/O
+                         net (fo=1, routed)           0.000    20.144    oled_arcade/invaders_inst_n_9
+    SLICE_X57Y18         FDRE                                         r  oled_arcade/tx_b2_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.443    88.141    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X57Y18         FDRE                                         r  oled_arcade/tx_b2_reg[1]/C
+                         clock pessimism              0.259    88.400    
+                         clock uncertainty           -0.035    88.365    
+    SLICE_X57Y18         FDRE (Setup_fdre_C_D)        0.031    88.396    oled_arcade/tx_b2_reg[1]
+  -------------------------------------------------------------------
+                         required time                         88.396    
+                         arrival time                         -20.144    
+  -------------------------------------------------------------------
+                         slack                                 68.252    
+
+Slack (MET) :             68.253ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        15.036ns  (logic 2.488ns (16.547%)  route 12.548ns (83.453%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT3=1 LUT5=2 LUT6=4 MUXF7=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.807ns = ( 88.140 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 f  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.130    14.193    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X47Y36         LUT3 (Prop_lut3_I1_O)        0.124    14.317 f  oled_arcade/invaders_inst/tx_b2[7]_i_149/O
+                         net (fo=14, routed)          0.689    15.006    oled_arcade/invaders_inst/tx_b2[7]_i_149_n_0
+    SLICE_X46Y35         LUT5 (Prop_lut5_I3_O)        0.150    15.156 r  oled_arcade/invaders_inst/tx_b2[7]_i_50/O
+                         net (fo=9, routed)           0.929    16.085    oled_arcade/invaders_inst/tx_b2[7]_i_50_n_0
+    SLICE_X48Y37         LUT6 (Prop_lut6_I5_O)        0.348    16.433 f  oled_arcade/invaders_inst/tx_b2[4]_i_26/O
+                         net (fo=1, routed)           0.815    17.248    oled_arcade/invaders_inst/tx_b2[4]_i_26_n_0
+    SLICE_X47Y35         LUT6 (Prop_lut6_I0_O)        0.124    17.372 r  oled_arcade/invaders_inst/tx_b2[4]_i_10/O
+                         net (fo=1, routed)           1.132    18.504    oled_arcade/invaders_inst/tx_b2[4]_i_10_n_0
+    SLICE_X47Y20         LUT6 (Prop_lut6_I1_O)        0.124    18.628 r  oled_arcade/invaders_inst/tx_b2[4]_i_5/O
+                         net (fo=1, routed)           0.000    18.628    oled_arcade/invaders_inst/tx_b2[4]_i_5_n_0
+    SLICE_X47Y20         MUXF7 (Prop_muxf7_I1_O)      0.217    18.845 r  oled_arcade/invaders_inst/tx_b2_reg[4]_i_3/O
+                         net (fo=1, routed)           0.997    19.842    oled_arcade/invaders_inst/tx_b2_reg[4]_i_3_n_0
+    SLICE_X55Y18         LUT5 (Prop_lut5_I2_O)        0.299    20.141 r  oled_arcade/invaders_inst/tx_b2[4]_i_1/O
+                         net (fo=1, routed)           0.000    20.141    oled_arcade/invaders_inst_n_6
+    SLICE_X55Y18         FDRE                                         r  oled_arcade/tx_b2_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.442    88.140    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y18         FDRE                                         r  oled_arcade/tx_b2_reg[4]/C
+                         clock pessimism              0.259    88.399    
+                         clock uncertainty           -0.035    88.364    
+    SLICE_X55Y18         FDRE (Setup_fdre_C_D)        0.031    88.395    oled_arcade/tx_b2_reg[4]
+  -------------------------------------------------------------------
+                         required time                         88.395    
+                         arrival time                         -20.141    
+  -------------------------------------------------------------------
+                         slack                                 68.253    
+
+Slack (MET) :             68.587ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/tx_b2_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        14.736ns  (logic 2.538ns (17.224%)  route 12.198ns (82.776%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT3=1 LUT4=1 LUT5=2 LUT6=3 MUXF7=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.807ns = ( 88.140 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          2.233    11.972    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X44Y31         LUT6 (Prop_lut6_I3_O)        0.124    12.096 r  oled_arcade/invaders_inst/tx_b2[7]_i_266/O
+                         net (fo=1, routed)           0.568    12.664    oled_arcade/invaders_inst/tx_b2[7]_i_266_n_0
+    SLICE_X45Y31         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    13.062 f  oled_arcade/invaders_inst/tx_b2_reg[7]_i_130/CO[3]
+                         net (fo=8, routed)           1.388    14.451    oled_arcade/invaders_inst/alien_pixel64417_in
+    SLICE_X46Y36         LUT3 (Prop_lut3_I1_O)        0.150    14.601 f  oled_arcade/invaders_inst/tx_b2[7]_i_148/O
+                         net (fo=12, routed)          1.377    15.978    oled_arcade/invaders_inst/tx_b2[7]_i_148_n_0
+    SLICE_X48Y34         LUT5 (Prop_lut5_I3_O)        0.376    16.354 r  oled_arcade/invaders_inst/tx_b2[7]_i_49/O
+                         net (fo=6, routed)           0.502    16.855    oled_arcade/invaders_inst/tx_b2[7]_i_49_n_0
+    SLICE_X50Y34         LUT4 (Prop_lut4_I1_O)        0.326    17.181 f  oled_arcade/invaders_inst/tx_b2[0]_i_19/O
+                         net (fo=1, routed)           0.407    17.588    oled_arcade/invaders_inst/tx_b2[0]_i_19_n_0
+    SLICE_X51Y34         LUT6 (Prop_lut6_I5_O)        0.124    17.712 r  oled_arcade/invaders_inst/tx_b2[0]_i_6/O
+                         net (fo=1, routed)           1.172    18.884    oled_arcade/invaders_inst/tx_b2[0]_i_6_n_0
+    SLICE_X51Y22         LUT6 (Prop_lut6_I0_O)        0.124    19.008 r  oled_arcade/invaders_inst/tx_b2[0]_i_4/O
+                         net (fo=1, routed)           0.496    19.505    oled_arcade/invaders_inst/tx_b2[0]_i_4_n_0
+    SLICE_X55Y18         LUT5 (Prop_lut5_I0_O)        0.124    19.629 r  oled_arcade/invaders_inst/tx_b2[0]_i_2/O
+                         net (fo=1, routed)           0.000    19.629    oled_arcade/invaders_inst/tx_b2[0]_i_2_n_0
+    SLICE_X55Y18         MUXF7 (Prop_muxf7_I0_O)      0.212    19.841 r  oled_arcade/invaders_inst/tx_b2_reg[0]_i_1/O
+                         net (fo=1, routed)           0.000    19.841    oled_arcade/invaders_inst_n_10
+    SLICE_X55Y18         FDRE                                         r  oled_arcade/tx_b2_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.442    88.140    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y18         FDRE                                         r  oled_arcade/tx_b2_reg[0]/C
+                         clock pessimism              0.259    88.399    
+                         clock uncertainty           -0.035    88.364    
+    SLICE_X55Y18         FDRE (Setup_fdre_C_D)        0.064    88.428    oled_arcade/tx_b2_reg[0]
+  -------------------------------------------------------------------
+                         required time                         88.428    
+                         arrival time                         -19.841    
+  -------------------------------------------------------------------
+                         slack                                 68.587    
+
+Slack (MET) :             69.938ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/invaders_inst/bullet_y_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        13.363ns  (logic 1.948ns (14.578%)  route 11.415ns (85.422%))
+  Logic Levels:           10  (CARRY4=1 LUT2=4 LUT3=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.805ns = ( 88.138 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          1.520    11.259    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X42Y33         LUT6 (Prop_lut6_I4_O)        0.124    11.383 r  oled_arcade/invaders_inst/aliens[0][1]_i_141/O
+                         net (fo=4, routed)           0.843    12.226    oled_arcade/invaders_inst/aliens[0][1]_i_141_n_0
+    SLICE_X42Y32         LUT2 (Prop_lut2_I0_O)        0.124    12.350 r  oled_arcade/invaders_inst/aliens[0][1]_i_52/O
+                         net (fo=1, routed)           0.000    12.350    oled_arcade/invaders_inst/aliens[0][1]_i_52_n_0
+    SLICE_X42Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    12.726 f  oled_arcade/invaders_inst/aliens_reg[0][1]_i_15/CO[3]
+                         net (fo=5, routed)           1.325    14.051    oled_arcade/invaders_inst/bullet_hits_alien5501_in
+    SLICE_X43Y37         LUT2 (Prop_lut2_I1_O)        0.124    14.175 r  oled_arcade/invaders_inst/aliens[0][1]_i_56/O
+                         net (fo=2, routed)           0.720    14.895    oled_arcade/invaders_inst/aliens[0][1]_i_56_n_0
+    SLICE_X41Y39         LUT6 (Prop_lut6_I3_O)        0.124    15.019 f  oled_arcade/invaders_inst/aliens[0][1]_i_16/O
+                         net (fo=3, routed)           1.054    16.073    oled_arcade/invaders_inst/aliens[0][1]_i_16_n_0
+    SLICE_X40Y39         LUT3 (Prop_lut3_I0_O)        0.124    16.197 r  oled_arcade/invaders_inst/aliens[1][0]_i_3/O
+                         net (fo=2, routed)           0.291    16.488    oled_arcade/invaders_inst/aliens[1][0]_i_3_n_0
+    SLICE_X40Y39         LUT5 (Prop_lut5_I3_O)        0.124    16.612 f  oled_arcade/invaders_inst/bullet_y[5]_i_8/O
+                         net (fo=4, routed)           0.495    17.106    oled_arcade/invaders_inst/bullet_y[5]_i_8_n_0
+    SLICE_X38Y38         LUT6 (Prop_lut6_I5_O)        0.124    17.230 f  oled_arcade/invaders_inst/bullet_y[5]_i_6/O
+                         net (fo=6, routed)           1.113    18.344    oled_arcade/invaders_inst/bullet_y[5]_i_6_n_0
+    SLICE_X36Y36         LUT2 (Prop_lut2_I1_O)        0.124    18.468 r  oled_arcade/invaders_inst/bullet_y[0]_i_1/O
+                         net (fo=1, routed)           0.000    18.468    oled_arcade/invaders_inst/bullet_y[0]_i_1_n_0
+    SLICE_X36Y36         FDRE                                         r  oled_arcade/invaders_inst/bullet_y_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.440    88.138    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y36         FDRE                                         r  oled_arcade/invaders_inst/bullet_y_reg[0]/C
+                         clock pessimism              0.274    88.412    
+                         clock uncertainty           -0.035    88.377    
+    SLICE_X36Y36         FDRE (Setup_fdre_C_D)        0.029    88.406    oled_arcade/invaders_inst/bullet_y_reg[0]
+  -------------------------------------------------------------------
+                         required time                         88.406    
+                         arrival time                         -18.468    
+  -------------------------------------------------------------------
+                         slack                                 69.938    
+
+Slack (MET) :             70.041ns  (required time - arrival time)
+  Source:                 oled_arcade/invaders_inst/alien_x0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/invaders_inst/aliens_reg[1][1]/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            83.333ns  (sys_clk_pin rise@83.333ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        13.251ns  (logic 2.054ns (15.501%)  route 11.197ns (84.499%))
+  Logic Levels:           9  (CARRY4=1 LUT2=3 LUT3=2 LUT6=3)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.809ns = ( 88.142 - 83.333 ) 
+    Source Clock Delay      (SCD):    5.105ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.561     5.105    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y37         FDRE                                         r  oled_arcade/invaders_inst/alien_x0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.456     5.561 f  oled_arcade/invaders_inst/alien_x0_reg[0]/Q
+                         net (fo=118, routed)         4.054     9.615    oled_arcade/invaders_inst/alien_x0_reg[0]
+    SLICE_X58Y37         LUT2 (Prop_lut2_I1_O)        0.124     9.739 r  oled_arcade/invaders_inst/alien_dir_right_i_17/O
+                         net (fo=18, routed)          1.520    11.259    oled_arcade/invaders_inst/alien_dir_right_i_17_n_0
+    SLICE_X42Y33         LUT6 (Prop_lut6_I4_O)        0.124    11.383 r  oled_arcade/invaders_inst/aliens[0][1]_i_141/O
+                         net (fo=4, routed)           0.843    12.226    oled_arcade/invaders_inst/aliens[0][1]_i_141_n_0
+    SLICE_X42Y32         LUT2 (Prop_lut2_I0_O)        0.124    12.350 r  oled_arcade/invaders_inst/aliens[0][1]_i_52/O
+                         net (fo=1, routed)           0.000    12.350    oled_arcade/invaders_inst/aliens[0][1]_i_52_n_0
+    SLICE_X42Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    12.726 f  oled_arcade/invaders_inst/aliens_reg[0][1]_i_15/CO[3]
+                         net (fo=5, routed)           1.325    14.051    oled_arcade/invaders_inst/bullet_hits_alien5501_in
+    SLICE_X43Y37         LUT2 (Prop_lut2_I1_O)        0.124    14.175 r  oled_arcade/invaders_inst/aliens[0][1]_i_56/O
+                         net (fo=2, routed)           0.720    14.895    oled_arcade/invaders_inst/aliens[0][1]_i_56_n_0
+    SLICE_X41Y39         LUT6 (Prop_lut6_I3_O)        0.124    15.019 f  oled_arcade/invaders_inst/aliens[0][1]_i_16/O
+                         net (fo=3, routed)           1.054    16.073    oled_arcade/invaders_inst/aliens[0][1]_i_16_n_0
+    SLICE_X40Y39         LUT3 (Prop_lut3_I0_O)        0.124    16.197 r  oled_arcade/invaders_inst/aliens[1][0]_i_3/O
+                         net (fo=2, routed)           0.685    16.882    oled_arcade/invaders_inst/aliens[1][0]_i_3_n_0
+    SLICE_X40Y39         LUT3 (Prop_lut3_I2_O)        0.152    17.034 r  oled_arcade/invaders_inst/aliens[1][0]_i_2/O
+                         net (fo=6, routed)           0.996    18.030    oled_arcade/invaders_inst/aliens[1][0]_i_2_n_0
+    SLICE_X43Y38         LUT6 (Prop_lut6_I1_O)        0.326    18.356 r  oled_arcade/invaders_inst/aliens[1][1]_i_1/O
+                         net (fo=1, routed)           0.000    18.356    oled_arcade/invaders_inst/aliens[1][1]_i_1_n_0
+    SLICE_X43Y38         FDSE                                         r  oled_arcade/invaders_inst/aliens_reg[1][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     83.333    83.333 r  
+    L17                                               0.000    83.333 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000    83.333    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406    84.739 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868    86.607    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    86.698 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.444    88.142    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X43Y38         FDSE                                         r  oled_arcade/invaders_inst/aliens_reg[1][1]/C
+                         clock pessimism              0.259    88.401    
+                         clock uncertainty           -0.035    88.366    
+    SLICE_X43Y38         FDSE (Setup_fdse_C_D)        0.031    88.397    oled_arcade/invaders_inst/aliens_reg[1][1]
+  -------------------------------------------------------------------
+                         required time                         88.397    
+                         arrival time                         -18.356    
+  -------------------------------------------------------------------
+                         slack                                 70.041    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.152ns  (arrival time - required time)
+  Source:                 oled_arcade/page_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/page_reg[0]_rep/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.285ns  (logic 0.186ns (65.209%)  route 0.099ns (34.791%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.466ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.562     1.466    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X53Y15         FDRE                                         r  oled_arcade/page_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y15         FDRE (Prop_fdre_C_Q)         0.141     1.607 r  oled_arcade/page_reg[0]/Q
+                         net (fo=89, routed)          0.099     1.706    oled_arcade/i2c_tx/page_reg[0]_rep_0
+    SLICE_X52Y15         LUT3 (Prop_lut3_I2_O)        0.045     1.751 r  oled_arcade/i2c_tx/page[0]_rep_i_1/O
+                         net (fo=1, routed)           0.000     1.751    oled_arcade/i2c_tx_n_13
+    SLICE_X52Y15         FDRE                                         r  oled_arcade/page_reg[0]_rep/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.831     1.980    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X52Y15         FDRE                                         r  oled_arcade/page_reg[0]_rep/C
+                         clock pessimism             -0.501     1.479    
+    SLICE_X52Y15         FDRE (Hold_fdre_C_D)         0.120     1.599    oled_arcade/page_reg[0]_rep
+  -------------------------------------------------------------------
+                         required time                         -1.599    
+                         arrival time                           1.751    
+  -------------------------------------------------------------------
+                         slack                                  0.152    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 oled_arcade/tx_b2_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/i2c_tx/b2_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.258ns  (logic 0.141ns (54.686%)  route 0.117ns (45.314%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.979ns
+    Source Clock Delay      (SCD):    1.465ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.561     1.465    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y16         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  oled_arcade/tx_b2_reg[6]/Q
+                         net (fo=1, routed)           0.117     1.722    oled_arcade/i2c_tx/b2_reg[7]_0[6]
+    SLICE_X56Y16         FDRE                                         r  oled_arcade/i2c_tx/b2_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.830     1.979    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X56Y16         FDRE                                         r  oled_arcade/i2c_tx/b2_reg[6]/C
+                         clock pessimism             -0.479     1.500    
+    SLICE_X56Y16         FDRE (Hold_fdre_C_D)         0.063     1.563    oled_arcade/i2c_tx/b2_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.563    
+                         arrival time                           1.722    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.165ns  (arrival time - required time)
+  Source:                 oled_arcade/snake_inst/snake_y_reg[22][0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/snake_inst/snake_y_reg[23][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.271ns  (logic 0.141ns (52.125%)  route 0.130ns (47.875%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.036ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.981ns
+    Source Clock Delay      (SCD):    1.466ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.562     1.466    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X39Y8          FDRE                                         r  oled_arcade/snake_inst/snake_y_reg[22][0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y8          FDRE (Prop_fdre_C_Q)         0.141     1.607 r  oled_arcade/snake_inst/snake_y_reg[22][0]/Q
+                         net (fo=3, routed)           0.130     1.736    oled_arcade/snake_inst/snake_y_reg[22]_43[0]
+    SLICE_X40Y9          FDRE                                         r  oled_arcade/snake_inst/snake_y_reg[23][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.832     1.981    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X40Y9          FDRE                                         r  oled_arcade/snake_inst/snake_y_reg[23][0]/C
+                         clock pessimism             -0.479     1.502    
+    SLICE_X40Y9          FDRE (Hold_fdre_C_D)         0.070     1.572    oled_arcade/snake_inst/snake_y_reg[23][0]
+  -------------------------------------------------------------------
+                         required time                         -1.572    
+                         arrival time                           1.736    
+  -------------------------------------------------------------------
+                         slack                                  0.165    
+
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 oled_arcade/snake_inst/snake_x_reg[23][1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/snake_inst/snake_x_reg[24][1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.273ns  (logic 0.141ns (51.662%)  route 0.132ns (48.338%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.466ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.562     1.466    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X40Y8          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[23][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y8          FDRE (Prop_fdre_C_Q)         0.141     1.607 r  oled_arcade/snake_inst/snake_x_reg[23][1]/Q
+                         net (fo=3, routed)           0.132     1.739    oled_arcade/snake_inst/snake_x_reg[23]_44[1]
+    SLICE_X39Y9          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[24][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.831     1.980    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X39Y9          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[24][1]/C
+                         clock pessimism             -0.479     1.501    
+    SLICE_X39Y9          FDRE (Hold_fdre_C_D)         0.070     1.571    oled_arcade/snake_inst/snake_x_reg[24][1]
+  -------------------------------------------------------------------
+                         required time                         -1.571    
+                         arrival time                           1.739    
+  -------------------------------------------------------------------
+                         slack                                  0.168    
+
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 oled_arcade/snake_inst/snake_x_reg[25][3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/snake_inst/snake_x_reg[26][3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.253ns  (logic 0.141ns (55.648%)  route 0.112ns (44.352%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.979ns
+    Source Clock Delay      (SCD):    1.466ns
+    Clock Pessimism Removal (CPR):    0.498ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.562     1.466    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X37Y9          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[25][3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X37Y9          FDRE (Prop_fdre_C_Q)         0.141     1.607 r  oled_arcade/snake_inst/snake_x_reg[25][3]/Q
+                         net (fo=3, routed)           0.112     1.719    oled_arcade/snake_inst/snake_x_reg[25]_48[3]
+    SLICE_X39Y10         FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[26][3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.830     1.979    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X39Y10         FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[26][3]/C
+                         clock pessimism             -0.498     1.481    
+    SLICE_X39Y10         FDRE (Hold_fdre_C_D)         0.070     1.551    oled_arcade/snake_inst/snake_x_reg[26][3]
+  -------------------------------------------------------------------
+                         required time                         -1.551    
+                         arrival time                           1.719    
+  -------------------------------------------------------------------
+                         slack                                  0.168    
+
+Slack (MET) :             0.171ns  (arrival time - required time)
+  Source:                 oled_arcade/tx_b2_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/i2c_tx/b2_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.258ns  (logic 0.141ns (54.686%)  route 0.117ns (45.314%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.979ns
+    Source Clock Delay      (SCD):    1.465ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.561     1.465    oled_arcade/clk_12mhz_IBUF_BUFG
+    SLICE_X55Y16         FDRE                                         r  oled_arcade/tx_b2_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y16         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  oled_arcade/tx_b2_reg[5]/Q
+                         net (fo=1, routed)           0.117     1.722    oled_arcade/i2c_tx/b2_reg[7]_0[5]
+    SLICE_X56Y16         FDRE                                         r  oled_arcade/i2c_tx/b2_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.830     1.979    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X56Y16         FDRE                                         r  oled_arcade/i2c_tx/b2_reg[5]/C
+                         clock pessimism             -0.479     1.500    
+    SLICE_X56Y16         FDRE (Hold_fdre_C_D)         0.052     1.552    oled_arcade/i2c_tx/b2_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.552    
+                         arrival time                           1.722    
+  -------------------------------------------------------------------
+                         slack                                  0.171    
+
+Slack (MET) :             0.174ns  (arrival time - required time)
+  Source:                 oled_arcade/snake_inst/snake_x_reg[10][0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/snake_inst/snake_x_reg[11][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.260ns  (logic 0.141ns (54.222%)  route 0.119ns (45.778%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.982ns
+    Source Clock Delay      (SCD):    1.467ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.563     1.467    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X41Y4          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[10][0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y4          FDRE (Prop_fdre_C_Q)         0.141     1.608 r  oled_arcade/snake_inst/snake_x_reg[10][0]/Q
+                         net (fo=3, routed)           0.119     1.727    oled_arcade/snake_inst/snake_x_reg[10]_18[0]
+    SLICE_X41Y3          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[11][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.833     1.982    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X41Y3          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[11][0]/C
+                         clock pessimism             -0.499     1.483    
+    SLICE_X41Y3          FDRE (Hold_fdre_C_D)         0.070     1.553    oled_arcade/snake_inst/snake_x_reg[11][0]
+  -------------------------------------------------------------------
+                         required time                         -1.553    
+                         arrival time                           1.727    
+  -------------------------------------------------------------------
+                         slack                                  0.174    
+
+Slack (MET) :             0.175ns  (arrival time - required time)
+  Source:                 oled_arcade/i2c_tx/FSM_onehot_state_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/i2c_tx/FSM_onehot_state_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.254ns  (logic 0.141ns (55.481%)  route 0.113ns (44.519%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.006ns
+    Source Clock Delay      (SCD):    1.492ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.588     1.492    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X59Y17         FDRE                                         r  oled_arcade/i2c_tx/FSM_onehot_state_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y17         FDRE (Prop_fdre_C_Q)         0.141     1.633 r  oled_arcade/i2c_tx/FSM_onehot_state_reg[5]/Q
+                         net (fo=3, routed)           0.113     1.746    oled_arcade/i2c_tx/FSM_onehot_state_reg_n_0_[5]
+    SLICE_X60Y16         FDRE                                         r  oled_arcade/i2c_tx/FSM_onehot_state_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.857     2.006    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X60Y16         FDRE                                         r  oled_arcade/i2c_tx/FSM_onehot_state_reg[6]/C
+                         clock pessimism             -0.499     1.507    
+    SLICE_X60Y16         FDRE (Hold_fdre_C_D)         0.064     1.571    oled_arcade/i2c_tx/FSM_onehot_state_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.571    
+                         arrival time                           1.746    
+  -------------------------------------------------------------------
+                         slack                                  0.175    
+
+Slack (MET) :             0.178ns  (arrival time - required time)
+  Source:                 oled_arcade/snake_inst/snake_x_reg[23][0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/snake_inst/snake_x_reg[24][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.283ns  (logic 0.141ns (49.844%)  route 0.142ns (50.156%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.466ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.562     1.466    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X40Y9          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[23][0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y9          FDRE (Prop_fdre_C_Q)         0.141     1.607 r  oled_arcade/snake_inst/snake_x_reg[23][0]/Q
+                         net (fo=3, routed)           0.142     1.749    oled_arcade/snake_inst/snake_x_reg[23]_44[0]
+    SLICE_X36Y9          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[24][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.831     1.980    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X36Y9          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[24][0]/C
+                         clock pessimism             -0.479     1.501    
+    SLICE_X36Y9          FDRE (Hold_fdre_C_D)         0.070     1.571    oled_arcade/snake_inst/snake_x_reg[24][0]
+  -------------------------------------------------------------------
+                         required time                         -1.571    
+                         arrival time                           1.749    
+  -------------------------------------------------------------------
+                         slack                                  0.178    
+
+Slack (MET) :             0.178ns  (arrival time - required time)
+  Source:                 oled_arcade/snake_inst/snake_x_reg[0][0]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_arcade/snake_inst/snake_x_reg[1][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.264ns  (logic 0.141ns (53.417%)  route 0.123ns (46.583%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.983ns
+    Source Clock Delay      (SCD):    1.468ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.564     1.468    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X44Y6          FDSE                                         r  oled_arcade/snake_inst/snake_x_reg[0][0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y6          FDSE (Prop_fdse_C_Q)         0.141     1.609 r  oled_arcade/snake_inst/snake_x_reg[0][0]/Q
+                         net (fo=8, routed)           0.123     1.732    oled_arcade/snake_inst/snake_x_reg[0]_62[0]
+    SLICE_X47Y5          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[1][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.834     1.983    oled_arcade/snake_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X47Y5          FDRE                                         r  oled_arcade/snake_inst/snake_x_reg[1][0]/C
+                         clock pessimism             -0.499     1.484    
+    SLICE_X47Y5          FDRE (Hold_fdre_C_D)         0.070     1.554    oled_arcade/snake_inst/snake_x_reg[1][0]
+  -------------------------------------------------------------------
+                         required time                         -1.554    
+                         arrival time                           1.732    
+  -------------------------------------------------------------------
+                         slack                                  0.178    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 41.667 }
+Period(ns):         83.333
+Sources:            { clk_12mhz }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     BUFG/I   n/a            2.155         83.333      81.178     BUFGCTRL_X0Y0  clk_12mhz_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X53Y16   led_counter_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X58Y23   audio/active_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X60Y24   audio/buzzer_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X61Y19   audio/duration_counter_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X59Y21   audio/duration_counter_reg[10]/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X59Y21   audio/duration_counter_reg[11]/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X61Y22   audio/duration_counter_reg[12]/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X59Y21   audio/duration_counter_reg[13]/C
+Min Period        n/a     FDRE/C   n/a            1.000         83.333      82.333     SLICE_X61Y21   audio/duration_counter_reg[14]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X53Y16   led_counter_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X53Y16   led_counter_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X58Y23   audio/active_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X58Y23   audio/active_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X60Y24   audio/buzzer_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X60Y24   audio/buzzer_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X61Y19   audio/duration_counter_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X61Y19   audio/duration_counter_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X59Y21   audio/duration_counter_reg[10]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         41.666      41.166     SLICE_X59Y21   audio/duration_counter_reg[10]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X53Y16   led_counter_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X53Y16   led_counter_reg[0]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X58Y23   audio/active_reg/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X58Y23   audio/active_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X60Y24   audio/buzzer_reg/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X60Y24   audio/buzzer_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X61Y19   audio/duration_counter_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X61Y19   audio/duration_counter_reg[0]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X59Y21   audio/duration_counter_reg[10]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         41.667      41.167     SLICE_X59Y21   audio/duration_counter_reg[10]/C
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay             1 Endpoint
+Min Delay             1 Endpoint
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            led0
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        17.111ns  (logic 5.328ns (31.137%)  route 11.783ns (68.863%))
+  Logic Levels:           3  (IBUF=1 LUT2=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 r  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 r  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    rst_btn_IBUF
+    SLICE_X53Y16         LUT2 (Prop_lut2_I0_O)        0.154     7.653 r  led0_OBUF_inst_i_1/O
+                         net (fo=1, routed)           5.747    13.400    led0_OBUF
+    A17                  OBUF (Prop_obuf_I_O)         3.711    17.111 r  led0_OBUF_inst/O
+                         net (fo=0)                   0.000    17.111    led0
+    A17                                                               r  led0 (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            led0
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        6.295ns  (logic 1.548ns (24.591%)  route 4.747ns (75.409%))
+  Logic Levels:           3  (IBUF=1 LUT2=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 r  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         0.231     0.231 r  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          2.610     2.841    rst_btn_IBUF
+    SLICE_X53Y16         LUT2 (Prop_lut2_I0_O)        0.043     2.884 r  led0_OBUF_inst_i_1/O
+                         net (fo=1, routed)           2.137     5.021    led0_OBUF
+    A17                  OBUF (Prop_obuf_I_O)         1.274     6.295 r  led0_OBUF_inst/O
+                         net (fo=0)                   0.000     6.295    led0
+    A17                                                               r  led0 (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  sys_clk_pin
+  To Clock:  
+
+Max Delay             4 Endpoints
+Min Delay             4 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 led_counter_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            led0
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.698ns  (logic 4.320ns (40.382%)  route 6.378ns (59.618%))
+  Logic Levels:           2  (LUT2=1 OBUF=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.563     5.107    clk_12mhz_IBUF_BUFG
+    SLICE_X53Y16         FDRE                                         r  led_counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y16         FDRE (Prop_fdre_C_Q)         0.456     5.563 r  led_counter_reg[0]/Q
+                         net (fo=2, routed)           0.630     6.193    led_counter_reg[0]
+    SLICE_X53Y16         LUT2 (Prop_lut2_I1_O)        0.153     6.346 r  led0_OBUF_inst_i_1/O
+                         net (fo=1, routed)           5.747    12.094    led0_OBUF
+    A17                  OBUF (Prop_obuf_I_O)         3.711    15.805 r  led0_OBUF_inst/O
+                         net (fo=0)                   0.000    15.805    led0
+    A17                                                               r  led0 (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 audio/buzzer_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            buzzer
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.308ns  (logic 4.036ns (55.226%)  route 3.272ns (44.774%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.617     5.161    audio/clk_12mhz_IBUF_BUFG
+    SLICE_X60Y24         FDRE                                         r  audio/buzzer_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y24         FDRE (Prop_fdre_C_Q)         0.518     5.679 r  audio/buzzer_reg/Q
+                         net (fo=1, routed)           3.272     8.951    buzzer_OBUF
+    P3                   OBUF (Prop_obuf_I_O)         3.518    12.469 r  buzzer_OBUF_inst/O
+                         net (fo=0)                   0.000    12.469    buzzer
+    P3                                                                r  buzzer (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 oled_arcade/i2c_tx/scl_reg/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_scl
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.438ns  (logic 3.964ns (61.577%)  route 2.474ns (38.423%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.629     5.173    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X61Y16         FDSE                                         r  oled_arcade/i2c_tx/scl_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y16         FDSE (Prop_fdse_C_Q)         0.456     5.629 r  oled_arcade/i2c_tx/scl_reg/Q
+                         net (fo=1, routed)           2.474     8.103    oled_scl_OBUF
+    V3                   OBUF (Prop_obuf_I_O)         3.508    11.611 r  oled_scl_OBUF_inst/O
+                         net (fo=0)                   0.000    11.611    oled_scl
+    V3                                                                r  oled_scl (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 oled_arcade/i2c_tx/sda_oe_reg/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_sda
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.274ns  (logic 4.046ns (64.499%)  route 2.227ns (35.501%))
+  Logic Levels:           1  (OBUFT=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.630     5.174    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X60Y15         FDSE                                         r  oled_arcade/i2c_tx/sda_oe_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y15         FDSE (Prop_fdse_C_Q)         0.518     5.692 f  oled_arcade/i2c_tx/sda_oe_reg/Q
+                         net (fo=2, routed)           2.227     7.919    oled_sda_TRI
+    W5                   OBUFT (TriStatE_obuft_T_O)
+                                                      3.528    11.448 r  oled_sda_OBUFT_inst/O
+                         net (fo=0)                   0.000    11.448    oled_sda
+    W5                                                                r  oled_sda (INOUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 oled_arcade/i2c_tx/sda_oe_reg/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_sda
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.850ns  (logic 0.988ns (53.399%)  route 0.862ns (46.601%))
+  Logic Levels:           1  (OBUFT=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.590     1.494    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X60Y15         FDSE                                         r  oled_arcade/i2c_tx/sda_oe_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y15         FDSE (Prop_fdse_C_Q)         0.164     1.658 r  oled_arcade/i2c_tx/sda_oe_reg/Q
+                         net (fo=2, routed)           0.862     2.520    oled_sda_TRI
+    W5                   OBUFT (TriStatD_obuft_T_O)
+                                                      0.824     3.344 r  oled_sda_OBUFT_inst/O
+                         net (fo=0)                   0.000     3.344    oled_sda
+    W5                                                                r  oled_sda (INOUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 oled_arcade/i2c_tx/scl_reg/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            oled_scl
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        2.038ns  (logic 1.350ns (66.260%)  route 0.688ns (33.740%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.589     1.493    oled_arcade/i2c_tx/clk_12mhz_IBUF_BUFG
+    SLICE_X61Y16         FDSE                                         r  oled_arcade/i2c_tx/scl_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y16         FDSE (Prop_fdse_C_Q)         0.141     1.634 r  oled_arcade/i2c_tx/scl_reg/Q
+                         net (fo=1, routed)           0.688     2.321    oled_scl_OBUF
+    V3                   OBUF (Prop_obuf_I_O)         1.209     3.531 r  oled_scl_OBUF_inst/O
+                         net (fo=0)                   0.000     3.531    oled_scl
+    V3                                                                r  oled_scl (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 audio/buzzer_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            buzzer
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        2.400ns  (logic 1.383ns (57.620%)  route 1.017ns (42.380%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.581     1.485    audio/clk_12mhz_IBUF_BUFG
+    SLICE_X60Y24         FDRE                                         r  audio/buzzer_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y24         FDRE (Prop_fdre_C_Q)         0.164     1.649 r  audio/buzzer_reg/Q
+                         net (fo=1, routed)           1.017     2.666    buzzer_OBUF
+    P3                   OBUF (Prop_obuf_I_O)         1.219     3.885 r  buzzer_OBUF_inst/O
+                         net (fo=0)                   0.000     3.885    buzzer
+    P3                                                                r  buzzer (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 led_counter_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Destination:            led0
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        3.805ns  (logic 1.460ns (38.375%)  route 2.345ns (61.625%))
+  Logic Levels:           2  (LUT2=1 OBUF=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.244     0.244 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.634     0.878    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.904 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.561     1.465    clk_12mhz_IBUF_BUFG
+    SLICE_X53Y16         FDRE                                         r  led_counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y16         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  led_counter_reg[0]/Q
+                         net (fo=2, routed)           0.207     1.813    led_counter_reg[0]
+    SLICE_X53Y16         LUT2 (Prop_lut2_I1_O)        0.045     1.858 r  led0_OBUF_inst_i_1/O
+                         net (fo=1, routed)           2.137     3.995    led0_OBUF
+    A17                  OBUF (Prop_obuf_I_O)         1.274     5.269 r  led0_OBUF_inst/O
+                         net (fo=0)                   0.000     5.269    led0
+    A17                                                               r  led0 (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  sys_clk_pin
+
+Max Delay           941 Endpoints
+Min Delay           941 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_left/pressed_reg/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        12.074ns  (logic 1.587ns (13.144%)  route 10.487ns (86.856%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.803ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.803ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.451    12.074    db_left/reset
+    SLICE_X54Y27         FDRE                                         r  db_left/pressed_reg/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.438     4.803    db_left/clk_12mhz_IBUF_BUFG
+    SLICE_X54Y27         FDRE                                         r  db_left/pressed_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_a/stable_n_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        12.063ns  (logic 1.587ns (13.156%)  route 10.476ns (86.844%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.876ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.876ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.440    12.063    db_a/reset
+    SLICE_X63Y32         FDSE                                         r  db_a/stable_n_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.511     4.876    db_a/clk_12mhz_IBUF_BUFG
+    SLICE_X63Y32         FDSE                                         r  db_a/stable_n_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_a/sync_0_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        12.063ns  (logic 1.587ns (13.156%)  route 10.476ns (86.844%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.876ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.876ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.440    12.063    db_a/reset
+    SLICE_X63Y32         FDSE                                         r  db_a/sync_0_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.511     4.876    db_a/clk_12mhz_IBUF_BUFG
+    SLICE_X63Y32         FDSE                                         r  db_a/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_a/sync_1_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        12.063ns  (logic 1.587ns (13.156%)  route 10.476ns (86.844%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.876ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.876ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.440    12.063    db_a/reset
+    SLICE_X63Y32         FDSE                                         r  db_a/sync_1_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.511     4.876    db_a/clk_12mhz_IBUF_BUFG
+    SLICE_X63Y32         FDSE                                         r  db_a/sync_1_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_a/pressed_reg/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        11.790ns  (logic 1.587ns (13.461%)  route 10.203ns (86.539%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.875ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.875ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.167    11.790    db_a/reset
+    SLICE_X58Y32         FDRE                                         r  db_a/pressed_reg/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.510     4.875    db_a/clk_12mhz_IBUF_BUFG
+    SLICE_X58Y32         FDRE                                         r  db_a/pressed_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_start/stable_n_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        11.790ns  (logic 1.587ns (13.461%)  route 10.203ns (86.539%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.875ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.875ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.167    11.790    db_start/reset
+    SLICE_X58Y32         FDSE                                         r  db_start/stable_n_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.510     4.875    db_start/clk_12mhz_IBUF_BUFG
+    SLICE_X58Y32         FDSE                                         r  db_start/stable_n_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_start/sync_0_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        11.790ns  (logic 1.587ns (13.461%)  route 10.203ns (86.539%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.875ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.875ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.167    11.790    db_start/reset
+    SLICE_X58Y32         FDSE                                         r  db_start/sync_0_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.510     4.875    db_start/clk_12mhz_IBUF_BUFG
+    SLICE_X58Y32         FDSE                                         r  db_start/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_start/sync_1_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        11.790ns  (logic 1.587ns (13.461%)  route 10.203ns (86.539%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.875ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.875ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.167    11.790    db_start/reset
+    SLICE_X58Y32         FDSE                                         r  db_start/sync_1_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.510     4.875    db_start/clk_12mhz_IBUF_BUFG
+    SLICE_X58Y32         FDSE                                         r  db_start/sync_1_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_left/stable_n_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        11.739ns  (logic 1.587ns (13.519%)  route 10.152ns (86.481%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.804ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.804ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.116    11.739    db_left/reset
+    SLICE_X56Y27         FDSE                                         r  db_left/stable_n_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.439     4.804    db_left/clk_12mhz_IBUF_BUFG
+    SLICE_X56Y27         FDSE                                         r  db_left/stable_n_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            db_left/sync_0_reg/S
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        11.739ns  (logic 1.587ns (13.519%)  route 10.152ns (86.481%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+  Clock Path Skew:        4.804ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.804ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 f  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         1.463     1.463 f  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          6.036     7.499    oled_arcade/i2c_tx/rst_btn_IBUF
+    SLICE_X53Y16         LUT1 (Prop_lut1_I0_O)        0.124     7.623 r  oled_arcade/i2c_tx/FSM_onehot_state[14]_i_1/O
+                         net (fo=200, routed)         4.116    11.739    db_left/reset
+    SLICE_X56Y27         FDSE                                         r  db_left/sync_0_reg/S
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         1.406     1.406 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           1.868     3.274    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     3.365 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         1.439     4.804    db_left/clk_12mhz_IBUF_BUFG
+    SLICE_X56Y27         FDSE                                         r  db_left/sync_0_reg/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 btn_down
+                            (input port)
+  Destination:            db_down/sync_0_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.009ns  (logic 0.229ns (22.650%)  route 0.781ns (77.350%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        1.999ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.999ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    P1                                                0.000     0.000 r  btn_down (IN)
+                         net (fo=0)                   0.000     0.000    btn_down
+    P1                   IBUF (Prop_ibuf_I_O)         0.229     0.229 r  btn_down_IBUF_inst/O
+                         net (fo=1, routed)           0.781     1.009    db_down/btn_down_IBUF
+    SLICE_X64Y24         FDSE                                         r  db_down/sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.850     1.999    db_down/clk_12mhz_IBUF_BUFG
+    SLICE_X64Y24         FDSE                                         r  db_down/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 btn_up
+                            (input port)
+  Destination:            db_up/sync_0_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.090ns  (logic 0.222ns (20.396%)  route 0.868ns (79.604%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        2.007ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.007ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    N2                                                0.000     0.000 r  btn_up (IN)
+                         net (fo=0)                   0.000     0.000    btn_up
+    N2                   IBUF (Prop_ibuf_I_O)         0.222     0.222 r  btn_up_IBUF_inst/O
+                         net (fo=1, routed)           0.868     1.090    db_up/btn_up_IBUF
+    SLICE_X62Y17         FDSE                                         r  db_up/sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.858     2.007    db_up/clk_12mhz_IBUF_BUFG
+    SLICE_X62Y17         FDSE                                         r  db_up/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 btn_A
+                            (input port)
+  Destination:            db_a/sync_0_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.218ns  (logic 0.218ns (17.881%)  route 1.001ns (82.119%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        2.007ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.007ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    H1                                                0.000     0.000 r  btn_A (IN)
+                         net (fo=0)                   0.000     0.000    btn_A
+    H1                   IBUF (Prop_ibuf_I_O)         0.218     0.218 r  btn_A_IBUF_inst/O
+                         net (fo=1, routed)           1.001     1.218    db_a/btn_A_IBUF
+    SLICE_X63Y32         FDSE                                         r  db_a/sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.858     2.007    db_a/clk_12mhz_IBUF_BUFG
+    SLICE_X63Y32         FDSE                                         r  db_a/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 btn_right
+                            (input port)
+  Destination:            db_right/sync_0_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.277ns  (logic 0.225ns (17.598%)  route 1.052ns (82.402%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        2.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.000ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    M2                                                0.000     0.000 r  btn_right (IN)
+                         net (fo=0)                   0.000     0.000    btn_right
+    M2                   IBUF (Prop_ibuf_I_O)         0.225     0.225 r  btn_right_IBUF_inst/O
+                         net (fo=1, routed)           1.052     1.277    db_right/btn_right_IBUF
+    SLICE_X60Y27         FDSE                                         r  db_right/sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.851     2.000    db_right/clk_12mhz_IBUF_BUFG
+    SLICE_X60Y27         FDSE                                         r  db_right/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 btn_left
+                            (input port)
+  Destination:            db_left/sync_0_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.384ns  (logic 0.223ns (16.108%)  route 1.161ns (83.892%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        1.973ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.973ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    N1                                                0.000     0.000 r  btn_left (IN)
+                         net (fo=0)                   0.000     0.000    btn_left
+    N1                   IBUF (Prop_ibuf_I_O)         0.223     0.223 r  btn_left_IBUF_inst/O
+                         net (fo=1, routed)           1.161     1.384    db_left/btn_left_IBUF
+    SLICE_X56Y27         FDSE                                         r  db_left/sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.824     1.973    db_left/clk_12mhz_IBUF_BUFG
+    SLICE_X56Y27         FDSE                                         r  db_left/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            oled_arcade/invaders_inst/audio_event_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.293ns  (logic 0.276ns (12.034%)  route 2.017ns (87.966%))
+  Logic Levels:           2  (IBUF=1 LUT6=1)
+  Clock Path Skew:        1.970ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.970ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 r  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         0.231     0.231 r  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          2.017     2.248    oled_arcade/invaders_inst/rst_btn_IBUF
+    SLICE_X42Y28         LUT6 (Prop_lut6_I0_O)        0.045     2.293 r  oled_arcade/invaders_inst/audio_event[2]_i_1__2/O
+                         net (fo=1, routed)           0.000     2.293    oled_arcade/invaders_inst/audio_event[2]_i_1__2_n_0
+    SLICE_X42Y28         FDRE                                         r  oled_arcade/invaders_inst/audio_event_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.821     1.970    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X42Y28         FDRE                                         r  oled_arcade/invaders_inst/audio_event_reg[2]/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            oled_arcade/invaders_inst/audio_event_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.295ns  (logic 0.276ns (12.023%)  route 2.019ns (87.977%))
+  Logic Levels:           2  (IBUF=1 LUT6=1)
+  Clock Path Skew:        1.970ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.970ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 r  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         0.231     0.231 r  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          2.019     2.250    oled_arcade/invaders_inst/rst_btn_IBUF
+    SLICE_X42Y28         LUT6 (Prop_lut6_I0_O)        0.045     2.295 r  oled_arcade/invaders_inst/audio_event[0]_i_1__2/O
+                         net (fo=1, routed)           0.000     2.295    oled_arcade/invaders_inst/audio_event[0]_i_1__2_n_0
+    SLICE_X42Y28         FDRE                                         r  oled_arcade/invaders_inst/audio_event_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.821     1.970    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X42Y28         FDRE                                         r  oled_arcade/invaders_inst/audio_event_reg[0]/C
+
+Slack:                    inf
+  Source:                 btn_start
+                            (input port)
+  Destination:            db_start/sync_0_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.423ns  (logic 0.238ns (9.816%)  route 2.186ns (90.184%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        2.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.005ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    B15                                               0.000     0.000 r  btn_start (IN)
+                         net (fo=0)                   0.000     0.000    btn_start
+    B15                  IBUF (Prop_ibuf_I_O)         0.238     0.238 r  btn_start_IBUF_inst/O
+                         net (fo=1, routed)           2.186     2.423    db_start/btn_start_IBUF
+    SLICE_X58Y32         FDSE                                         r  db_start/sync_0_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.856     2.005    db_start/clk_12mhz_IBUF_BUFG
+    SLICE_X58Y32         FDSE                                         r  db_start/sync_0_reg/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            oled_arcade/breakout_inst/audio_event_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.650ns  (logic 0.276ns (10.415%)  route 2.374ns (89.585%))
+  Logic Levels:           2  (IBUF=1 LUT6=1)
+  Clock Path Skew:        1.969ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.969ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 r  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         0.231     0.231 r  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          2.374     2.605    oled_arcade/breakout_inst/rst_btn_IBUF
+    SLICE_X48Y25         LUT6 (Prop_lut6_I0_O)        0.045     2.650 r  oled_arcade/breakout_inst/audio_event[1]_i_1__1/O
+                         net (fo=1, routed)           0.000     2.650    oled_arcade/breakout_inst/audio_event[1]_i_1__1_n_0
+    SLICE_X48Y25         FDRE                                         r  oled_arcade/breakout_inst/audio_event_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.820     1.969    oled_arcade/breakout_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X48Y25         FDRE                                         r  oled_arcade/breakout_inst/audio_event_reg[1]/C
+
+Slack:                    inf
+  Source:                 rst_btn
+                            (input port)
+  Destination:            oled_arcade/invaders_inst/active_d_reg/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.667ns period=83.333ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.654ns  (logic 0.276ns (10.400%)  route 2.378ns (89.600%))
+  Logic Levels:           2  (IBUF=1 LUT4=1)
+  Clock Path Skew:        1.967ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.967ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A18                                               0.000     0.000 r  rst_btn (IN)
+                         net (fo=0)                   0.000     0.000    rst_btn
+    A18                  IBUF (Prop_ibuf_I_O)         0.231     0.231 r  rst_btn_IBUF_inst/O
+                         net (fo=36, routed)          2.378     2.609    menu/rst_btn_IBUF
+    SLICE_X43Y23         LUT4 (Prop_lut4_I3_O)        0.045     2.654 r  menu/active_d_i_1/O
+                         net (fo=1, routed)           0.000     2.654    oled_arcade/invaders_inst/active_d_reg_0
+    SLICE_X43Y23         FDRE                                         r  oled_arcade/invaders_inst/active_d_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  clk_12mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_12mhz
+    L17                  IBUF (Prop_ibuf_I_O)         0.432     0.432 r  clk_12mhz_IBUF_inst/O
+                         net (fo=1, routed)           0.689     1.120    clk_12mhz_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.149 r  clk_12mhz_IBUF_BUFG_inst/O
+                         net (fo=929, routed)         0.818     1.967    oled_arcade/invaders_inst/clk_12mhz_IBUF_BUFG
+    SLICE_X43Y23         FDRE                                         r  oled_arcade/invaders_inst/active_d_reg/C
+
+
+
+
+

@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Jun 27 15:01:06 2026
+# Process ID         : 17968
+# Current directory  : C:/Users/david/FPGA_Vivado_Designs/CMOD_Arcade_Instructable/CMOD_Arcade_Instructable.runs/impl_1
+# Command line       : vivado.exe -log oled_arcade_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source oled_arcade_top.tcl -notrace
+# Log file           : C:/Users/david/FPGA_Vivado_Designs/CMOD_Arcade_Instructable/CMOD_Arcade_Instructable.runs/impl_1/oled_arcade_top.vdi
+# Journal file       : C:/Users/david/FPGA_Vivado_Designs/CMOD_Arcade_Instructable/CMOD_Arcade_Instructable.runs/impl_1\vivado.jou
+# Running On         : Frank-Rizzo
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+# CPU Frequency      : 2904 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 4
+# Host memory        : 8493 MB
+# Swap memory        : 24364 MB
+# Total Virtual      : 32858 MB
+# Available Virtual  : 10224 MB
+#-----------------------------------------------------------
+source oled_arcade_top.tcl -notrace
