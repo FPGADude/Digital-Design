@@ -1,0 +1,1 @@
+write_cfgmem -force -format mcs -size 32 -interface SPIx4 -loadbit "up 0x000000 C:/Users/david/Desktop/FlashPt4/flash_part4_top.bit" -loaddata "up 0x3F0000 C:/Users/david/Desktop/FlashPt4/spaceship.bin" -file "C:/Users/david/Desktop/FlashPt4/part4_flash_image.mcs"
