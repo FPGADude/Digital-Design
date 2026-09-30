@@ -1,0 +1,5 @@
+write_cfgmem -format mcs -size 32 -interface SPIx4 \
+-loadbit "up 0x000000 C:/Users/david/Desktop/FlashPart7/FlashPt7_Vivado_Project/FlashPt7_Vivado_Project.runs/impl_1/qspi_showcase_top.bit" \
+-loaddata "up 0x200000 C:/Users/david/Desktop/FlashPart7/assets/audio.bin up 0x3E0000 C:/Users/david/Desktop/FlashPart7/assets/font_8x16.bin up 0x3E1000 C:/Users/david/Desktop/FlashPart7/assets/sprite1.bin up 0x3E2000 C:/Users/david/Desktop/FlashPart7/assets/sprite2.bin up 0x3E3000 C:/Users/david/Desktop/FlashPart7/assets/sprite3.bin" \
+-file "C:/Users/david/Desktop/FlashPart7/part7_qspi_showcase.mcs" \
+-force
